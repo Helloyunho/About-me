@@ -1,0 +1,23 @@
+{
+  "name": "about_me",
+  "version": "1.0.0",
+  "description": "About me",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js",
+    "build": "next build"
+  },
+  "author": "Helloyunho",
+  "license": "MIT",
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "express": "^4.16.4",
+    "file-loader": "^3.0.1",
+    "next": "^7.0.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.84.0",
+    "url-loader": "^1.1.2"
+  }
+}
