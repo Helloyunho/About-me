@@ -1,0 +1,39 @@
+.dark .ui.items > .item > .content > .header {
+  color: #FFFFFF !important
+}
+
+.dark .ui.items > .item > .content > .description {
+  color: #FFFFFF !important
+}
+
+.dark .ui.items > .item > .content:hover .header {
+  color: #1e70bf !important
+}
+
+.dark .ui.divided.items > .item {
+  border-top: 1px solid #bdc3c7
+}
+
+.dark .ui.divided.items > .item:first-child {
+  border-top: none
+}
+
+.dark h1 {
+  color: #FFFFFF !important
+}
+
+.dark h2 {
+  color: #FFFFFF !important
+}
+
+.dark h3 {
+  color: #FFFFFF !important
+}
+
+.dark h4 {
+  color: #FFFFFF !important
+}
+
+.dark h5 {
+  color: #FFFFFF !important
+}

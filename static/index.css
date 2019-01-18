@@ -1,0 +1,26 @@
+.dark .ui.card, .ui.cards > .card {
+  background: #636e72;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.dark .ui.black.card:hover, .ui.black.cards > .card:hover, .ui.cards > .black.card:hover {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.dark .ui.card > .content > .description, .ui.cards > .card > .content > .description {
+  color: rgba(255,255,255,.68)
+}
+
+.dark .ui.card > .content > .header, .ui.cards > .card > .content > .header {
+  color: rgba(255,255,255,.85)
+}
+
+.dark .ui.card .meta, .ui.cards > .card .meta {
+  color: rgba(255,255,255,.4)
+}
+
+.dark .ui.card > .extra a:not(.ui), .ui.cards > .card > .extra a:not(.ui) {
+  color: rgba(255,255,255,.4)
+}

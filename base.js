@@ -34,6 +34,10 @@ const run = async (dev = false) => {
     return app.render(req, res, '/', req.query)
   })
 
+  server.get('/projects', (req, res) => {
+    return app.render(req, res, '/projects', req.query)
+  })
+
   server.get('/_error', (req, res) => {
     return app.render(req, res, '/_error', req.query)
   })

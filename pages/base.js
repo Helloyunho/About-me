@@ -4,6 +4,11 @@ import { Menu, Container, Icon } from 'semantic-ui-react'
 import Link from 'next/link'
 
 export default class Base extends React.Component {
+  static defaultProps = {
+    onClickDark: () => {},
+    dark: false
+  }
+
   constructor (props) {
     super(props)
     this.state = {}
@@ -12,7 +17,7 @@ export default class Base extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <Menu attached='top' stackable>
+        <Menu attached='top' stackable inverted={this.props.dark}>
           <Container>
             <Link href='/' passHref>
               <Menu.Item
@@ -21,21 +26,17 @@ export default class Base extends React.Component {
                 <Icon name='home' /> Home
               </Menu.Item>
             </Link>
+            <Link href='/projects' passHref>
+              <Menu.Item
+                name='projects'
+                as='a'>
+                <Icon name='folder' /> Projects
+              </Menu.Item>
+            </Link>
             <Menu.Menu position='right'>
-              <Link href='/login' passHref>
-                <Menu.Item
-                  name='login'
-                  as='a'>
-                  <Icon name='sign-in' /> Sign In
-                </Menu.Item>
-              </Link>
-              <Link href='/register' passHref>
-                <Menu.Item
-                  name='register'
-                  as='a'>
-                  <Icon name='edit' /> Register
-                </Menu.Item>
-              </Link>
+              <Menu.Item name='dark' onClick={this.props.onClickDark}>
+                <Icon name={this.props.dark ? 'sun' : 'moon'} /> {this.props.dark ? 'Light' : 'Dark'}
+              </Menu.Item>
             </Menu.Menu>
           </Container>
         </Menu>
