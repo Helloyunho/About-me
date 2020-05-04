@@ -1,0 +1,32 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.coding-background {
+  background-image: url(images/coding_bg.jpg);
+  transition: background-image 500ms ease-in-out;
+}
+
+.original-background {
+  background-image: url(images/blank-transparent.png);
+  transition: background-image 500ms ease-in-out;
+}
+
+.dark-background {
+  background-image: url(images/dark-background.png);
+  transition: background-image 500ms ease-in-out;
+}
+
+* {
+  word-break: keep-all;
+}
+
+.lang-icons {
+  max-width: calc(50vh - 1rem - 1rem - 1rem - 1rem);
+}
+
+.my-profile {
+  max-width: 39.0625%;
+}
