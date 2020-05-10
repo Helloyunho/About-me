@@ -7,7 +7,7 @@ import Rust from '../../images/languages/rust.svg'
 import { darkPages } from '../../config'
 import PropTypes from 'prop-types'
 
-const Page3 = ({ currentPage }) => {
+const Page4 = ({ currentPage }) => {
   return (
     <div
       data-anchor='Page 4'
@@ -104,8 +104,8 @@ const Page3 = ({ currentPage }) => {
   )
 }
 
-Page3.propTypes = {
+Page4.propTypes = {
   currentPage: PropTypes.number.isRequired
 }
 
-export default Page3
+export default Page4
