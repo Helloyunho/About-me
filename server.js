@@ -6,6 +6,9 @@ const path = require('path')
 
 const app = new Koa()
 
+app.use(async ctx => {
+  ctx.set('Cache-Control', 'max-age=86400')
+})
 app.use(mount('/', koaStatic('build/')))
 app.use(async ctx => {
   if (ctx.status === 404) {
