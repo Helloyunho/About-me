@@ -1,5 +1,12 @@
 // npx tailwindcss init --full
 module.exports = {
+  purge: {
+    enabled: true,
+    content: ['src/**/*.js'],
+    options: {
+      whitelist: ['text-6xl']
+    }
+  },
   prefix: '',
   important: false,
   separator: ':',

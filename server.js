@@ -1,18 +1,16 @@
 const Koa = require('koa')
 const koaStatic = require('koa-static-cache')
-const mount = require('koa-mount')
 const send = require('koa-send')
 const path = require('path')
 
 const app = new Koa()
 
 app.use(
-  mount(
-    '/',
-    koaStatic('build/', {
-      maxAge: 24 * 60 * 60
-    })
-  )
+  koaStatic('build/', {
+    maxAge: 24 * 60 * 60,
+    prefix: '/',
+    gzip: true
+  })
 )
 app.use(async ctx => {
   if (ctx.status === 404) {

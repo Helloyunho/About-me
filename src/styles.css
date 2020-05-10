@@ -4,6 +4,10 @@
 
 @tailwind utilities;
 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, '애플 SD 산돌고딕 Neo', 'Apple SD Gothic Neo', 'Nanum Gothic', Helvetica, Arial, sans-serif;
+}
+
 .coding-background {
   background-image: url(images/coding_bg.jpg);
   transition: background-image 500ms ease-in-out;
