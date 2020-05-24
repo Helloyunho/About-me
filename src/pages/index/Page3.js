@@ -22,6 +22,7 @@ const Page3 = ({ currentPage }) => {
                 dark={darkPages.includes(currentPage)}
                 light={!darkPages.includes(currentPage)}
                 size='base'
+                resize={false}
                 className='text-center'
               >
                 Swift (?)
@@ -33,6 +34,7 @@ const Page3 = ({ currentPage }) => {
                 dark={darkPages.includes(currentPage)}
                 light={!darkPages.includes(currentPage)}
                 size='base'
+                resize={false}
                 className='text-center'
               >
                 JavaScript
@@ -44,6 +46,7 @@ const Page3 = ({ currentPage }) => {
                 dark={darkPages.includes(currentPage)}
                 light={!darkPages.includes(currentPage)}
                 size='base'
+                resize={false}
                 className='text-center'
               >
                 Python
@@ -55,6 +58,7 @@ const Page3 = ({ currentPage }) => {
                 dark={darkPages.includes(currentPage)}
                 light={!darkPages.includes(currentPage)}
                 size='base'
+                resize={false}
                 className='text-center'
               >
                 Rust
@@ -94,6 +98,7 @@ const Page3 = ({ currentPage }) => {
               dark={darkPages.includes(currentPage)}
               light={!darkPages.includes(currentPage)}
               size='base'
+              resize={false}
             >
               이 아이콘들을 제공해주신 ppapman님 감사합니다.
             </TransitionableText>

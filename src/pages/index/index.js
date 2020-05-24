@@ -15,13 +15,6 @@ const Index = () => {
       autoInitialize: false
     })
     setPages(pages)
-    /* iOS re-orientation fix */
-    if (
-      navigator.userAgent.match(/iPhone/i) ||
-      navigator.userAgent.match(/iPad/i)
-    ) {
-      window.scrollTo(0, 1)
-    }
     disableBodyScroll(document.querySelector('#root'))
     pages.on('init', e => {
       setPage(e.index)

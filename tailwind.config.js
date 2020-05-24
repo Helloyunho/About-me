@@ -4,7 +4,7 @@ module.exports = {
     enabled: true,
     content: ['src/**/*.js'],
     options: {
-      whitelist: ['text-6xl']
+      whitelist: ['text-6xl', 'text-5xl', 'text-4xl', 'md:text-6xl']
     }
   },
   prefix: '',

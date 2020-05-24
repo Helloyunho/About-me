@@ -8,7 +8,9 @@ const TransitionableText = props => {
     background,
     bold,
     as = 'h1',
-    size = '6xl',
+    size = '4xl',
+    resize = true,
+    midSize = '6xl',
     className = '',
     children
   } = props
@@ -20,6 +22,7 @@ const TransitionableText = props => {
     'duration-500',
     'ease-in-out',
     `text-${size}`,
+    resize ? `md:text-${midSize}` : '',
     ...className.split(' ')
   ]
 
@@ -51,6 +54,8 @@ TransitionableText.propTypes = {
   bold: PropTypes.bool,
   as: PropTypes.string,
   size: PropTypes.string,
+  resize: PropTypes.bool,
+  midSize: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.string])
 }

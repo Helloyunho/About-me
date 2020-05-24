@@ -15,6 +15,8 @@ const Page1 = ({ currentPage, destroyPageable }) => {
               dark={darkPages.includes(currentPage)}
               light={!darkPages.includes(currentPage)}
               bold
+              size='6xl'
+              resize={false}
             >
               안녕하세요,
             </TransitionableText>
@@ -23,6 +25,8 @@ const Page1 = ({ currentPage, destroyPageable }) => {
                 dark={darkPages.includes(currentPage)}
                 light={!darkPages.includes(currentPage)}
                 bold
+                size='6xl'
+                resize={false}
                 background
               >
                 Helloyunho
@@ -31,6 +35,8 @@ const Page1 = ({ currentPage, destroyPageable }) => {
                 dark={darkPages.includes(currentPage)}
                 light={!darkPages.includes(currentPage)}
                 bold
+                size='6xl'
+                resize={false}
                 className='lg:block hidden'
               >
                 &nbsp;입니다.
@@ -39,6 +45,8 @@ const Page1 = ({ currentPage, destroyPageable }) => {
                 dark={darkPages.includes(currentPage)}
                 light={!darkPages.includes(currentPage)}
                 bold
+                size='6xl'
+                resize={false}
                 className='lg:hidden block'
               >
                 입니다.
@@ -49,6 +57,7 @@ const Page1 = ({ currentPage, destroyPageable }) => {
                 dark={darkPages.includes(currentPage)}
                 light={!darkPages.includes(currentPage)}
                 size='base'
+                resize={false}
                 className='lg:block hidden'
               >
                 제 정보에 대하여 더 궁금하다고요? 제 프로필을 눌러보세요!
@@ -57,6 +66,7 @@ const Page1 = ({ currentPage, destroyPageable }) => {
                 dark={darkPages.includes(currentPage)}
                 light={!darkPages.includes(currentPage)}
                 size='base'
+                resize={false}
                 className='lg:hidden block'
               >
                 제 정보에 대하여 더 궁금하다고요?&nbsp;
@@ -71,6 +81,7 @@ const Page1 = ({ currentPage, destroyPageable }) => {
                   dark={darkPages.includes(currentPage)}
                   light={!darkPages.includes(currentPage)}
                   size='base'
+                  resize={false}
                   className='lg:hidden block'
                 >
                   여기
@@ -80,6 +91,7 @@ const Page1 = ({ currentPage, destroyPageable }) => {
                 dark={darkPages.includes(currentPage)}
                 light={!darkPages.includes(currentPage)}
                 size='base'
+                resize={false}
                 className='lg:hidden block'
               >
                 를 눌러보세요!

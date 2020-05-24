@@ -731,6 +731,14 @@ video {
   font-size: 1rem;
 }
 
+.text-4xl {
+  font-size: 2.25rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+}
+
 .text-6xl {
   font-size: 4rem;
 }
@@ -765,6 +773,10 @@ video {
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
+}
+
+.resize {
+  resize: both;
 }
 
 .shadow-outline {
@@ -871,6 +883,12 @@ body {
 
 .my-profile {
   max-width: 39.0625%;
+}
+
+@media (min-width: 768px) {
+  .md\:text-6xl {
+    font-size: 4rem;
+  }
 }
 
 @media (min-width: 1024px) {

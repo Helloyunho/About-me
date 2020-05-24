@@ -12,6 +12,7 @@ const Page2 = ({ currentPage }) => {
             <TransitionableText
               dark={darkPages.includes(currentPage)}
               light={!darkPages.includes(currentPage)}
+              size='5xl'
               bold
             >
               저는&nbsp;
@@ -20,6 +21,7 @@ const Page2 = ({ currentPage }) => {
               dark={darkPages.includes(currentPage)}
               light={!darkPages.includes(currentPage)}
               bold
+              size='5xl'
               background
             >
               프로그래밍
@@ -28,6 +30,7 @@ const Page2 = ({ currentPage }) => {
           <TransitionableText
             dark={darkPages.includes(currentPage)}
             light={!darkPages.includes(currentPage)}
+            size='5xl'
             bold
           >
             하는 것을 좋아합니다.
@@ -36,6 +39,7 @@ const Page2 = ({ currentPage }) => {
             dark={darkPages.includes(currentPage)}
             light={!darkPages.includes(currentPage)}
             size='xs'
+            resize={false}
           >
             아 그리고, HTML은 프로그래밍 언어가 아닙니다.
           </TransitionableText>
