@@ -12,7 +12,8 @@ const Index = () => {
   React.useEffect(() => {
     const pages = new Pageable('#container', {
       animation: 500,
-      autoInitialize: false
+      autoInitialize: false,
+      pips: false
     })
     setPages(pages)
     disableBodyScroll(document.querySelector('#root'))

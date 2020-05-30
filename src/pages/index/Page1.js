@@ -76,6 +76,7 @@ const Page1 = ({ currentPage, destroyPageable }) => {
                   destroyPageable()
                   navigate('/myinfo')
                 }}
+                aria-label='여기'
               >
                 <TransitionableText
                   dark={darkPages.includes(currentPage)}
@@ -107,6 +108,7 @@ const Page1 = ({ currentPage, destroyPageable }) => {
               destroyPageable()
               navigate('/myinfo')
             }}
+            aria-label='프로필 상세정보 보기'
           >
             <img src={image} alt='' />
           </button>
