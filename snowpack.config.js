@@ -10,11 +10,10 @@ module.exports = {
       {
         imports: {
           '*': true
-        }
+        },
+        dev: true
       }
     ]
   ],
   scripts: { 'build:css': 'postcss' }
 }
-
-console.log('Fcuk')
