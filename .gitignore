@@ -10,6 +10,10 @@
 
 # production
 /build
+# snowpack
+.build
+build
+web_modules
 
 # misc
 .DS_Store

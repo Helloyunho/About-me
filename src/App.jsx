@@ -1,6 +1,6 @@
 import React from 'react'
 import { Router } from '@reach/router'
-import Index from './pages/index'
+import Index from './pages/index/index'
 import MyInfo from './pages/myInfo'
 
 const App = () => {

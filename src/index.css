@@ -89,8 +89,7 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 */
 
 abbr[title] {
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
 /**
@@ -401,18 +400,6 @@ img {
 
 textarea {
   resize: vertical;
-}
-
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-  color: #cbd5e0;
-}
-
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  color: #cbd5e0;
-}
-
-input::-ms-input-placeholder, textarea::-ms-input-placeholder {
-  color: #cbd5e0;
 }
 
 input::placeholder,

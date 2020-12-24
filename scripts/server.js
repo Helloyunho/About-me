@@ -6,7 +6,7 @@ const path = require('path')
 const app = new Koa()
 
 app.use(
-  koaStatic('build/', {
+  koaStatic('../build/', {
     maxAge: 24 * 60 * 60,
     prefix: '/',
     gzip: true
@@ -15,7 +15,7 @@ app.use(
 app.use(async ctx => {
   if (ctx.status === 404) {
     await send(ctx, 'index.html', {
-      root: path.resolve(__dirname, 'build')
+      root: path.resolve(__dirname, '..', 'build')
     })
   }
 })

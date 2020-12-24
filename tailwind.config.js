@@ -2,7 +2,7 @@
 module.exports = {
   purge: {
     enabled: true,
-    content: ['src/**/*.js'],
+    content: ['src/**/*.jsx'],
     options: {
       safelist: ['text-6xl', 'text-5xl', 'text-4xl', 'md:text-6xl']
     }
