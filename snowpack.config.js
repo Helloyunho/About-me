@@ -17,3 +17,5 @@ module.exports = {
   ],
   scripts: { 'build:css': 'postcss' }
 }
+
+console.log('Fcuk')
