@@ -10,7 +10,8 @@ module.exports = {
       {
         imports: {
           '*': true
-        }
+        },
+        dev: true
       }
     ]
   ],
