@@ -1,56 +1,86 @@
 import React from 'react'
 import TransitionableText from '../../components/TransitionableText'
-import { darkPages } from '../../config'
-import PropTypes from 'prop-types'
+import Swift from '../../images/languages/swift.svg'
+import JS from '../../images/languages/js.svg'
+import Python from '../../images/languages/python.svg'
+import TS from '../../images/languages/ts.svg'
+import { useTranslation } from 'react-i18next'
 
-const Page2 = ({ currentPage }) => {
+const Page2 = () => {
+  const { t } = useTranslation('page2')
+
   return (
-    <div data-anchor='Page 2' className='w-screen h-screen'>
-      <div className='h-full flex flex-col justify-center items-center'>
-        <div className='flex flex-col'>
-          <div className='flex flex-row'>
-            <TransitionableText
-              dark={darkPages.includes(currentPage)}
-              light={!darkPages.includes(currentPage)}
-              size='5xl'
-              bold
-            >
-              저는&nbsp;
-            </TransitionableText>
-            <TransitionableText
-              dark={darkPages.includes(currentPage)}
-              light={!darkPages.includes(currentPage)}
-              bold
-              size='5xl'
-              background
-            >
-              프로그래밍
-            </TransitionableText>
+    <div className='section'>
+      <div className='w-screen h-screen grid xl:grid-cols-3 grid-rows-2'>
+        <div className='xl:col-span-1 xl:row-span-2 row-span-1'>
+          <div className='h-full flex items-center justify-center'>
+            <div className='grid grid-cols-2 grid-rows-2 gap-4 lang-icons'>
+              <div className='grid-flow-col grid-flow-row'>
+                <img src={Swift} alt='Swift' className='w-full' />
+                <TransitionableText
+                  light
+                  size='base'
+                  resize={false}
+                  className='text-center'>
+                  Swift (?)
+                </TransitionableText>
+              </div>
+              <div className='grid-flow-col grid-flow-row'>
+                <img src={JS} alt='JS' className='w-full' />
+                <TransitionableText
+                  light
+                  size='base'
+                  resize={false}
+                  className='text-center'>
+                  JavaScript
+                </TransitionableText>
+              </div>
+              <div className='grid-flow-col grid-flow-row'>
+                <img src={Python} alt='Python' className='w-full' />
+                <TransitionableText
+                  light
+                  size='base'
+                  resize={false}
+                  className='text-center'>
+                  Python
+                </TransitionableText>
+              </div>
+              <div className='grid-flow-col grid-flow-row'>
+                <img src={TS} alt='TypeScript' className='w-full' />
+                <TransitionableText
+                  light
+                  size='base'
+                  resize={false}
+                  className='text-center'>
+                  TypeScript
+                </TransitionableText>
+              </div>
+            </div>
           </div>
-          <TransitionableText
-            dark={darkPages.includes(currentPage)}
-            light={!darkPages.includes(currentPage)}
-            size='5xl'
-            bold
-          >
-            하는 것을 좋아합니다.
-          </TransitionableText>
-          <TransitionableText
-            dark={darkPages.includes(currentPage)}
-            light={!darkPages.includes(currentPage)}
-            size='xs'
-            resize={false}
-          >
-            아 그리고, HTML은 프로그래밍 언어가 아닙니다.
-          </TransitionableText>
+        </div>
+        <div className='xl:col-span-2 xl:row-span-2 row-span-1'>
+          <div className='h-full grid lg:flex lg:flex-col lg:justify-center lg:items-center'>
+            <div className='m-auto lg:flex lg:flex-col'>
+              <div className='lg:flex lg:flex-row'>
+                <TransitionableText light bold>
+                  {t('langPrefix')}
+                </TransitionableText>
+                <TransitionableText light bold background>
+                  Swift, JS, Python, TS
+                </TransitionableText>
+              </div>
+              <TransitionableText light bold>
+                {t('langSuffix')}
+              </TransitionableText>
+              <TransitionableText light size='base' resize={false}>
+                {t('thanksComment')}
+              </TransitionableText>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   )
-}
-
-Page2.propTypes = {
-  currentPage: PropTypes.number.isRequired
 }
 
 export default Page2

@@ -89,7 +89,8 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 */
 
 abbr[title] {
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
 }
 
 /**
@@ -402,6 +403,18 @@ textarea {
   resize: vertical;
 }
 
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #cbd5e0;
+}
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: #cbd5e0;
+}
+
+input::-ms-input-placeholder, textarea::-ms-input-placeholder {
+  color: #cbd5e0;
+}
+
 input::placeholder,
 textarea::placeholder {
   color: #cbd5e0;
@@ -585,10 +598,6 @@ video {
   cursor: pointer;
 }
 
-.block {
-  display: block;
-}
-
 .flex {
   display: flex;
 }
@@ -599,10 +608,6 @@ video {
 
 .grid {
   display: grid;
-}
-
-.hidden {
-  display: none;
 }
 
 .flex-row {
@@ -741,20 +746,20 @@ video {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.col-span-3 {
-  grid-column: span 3 / span 3;
-}
-
 .grid-rows-2 {
   grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 
+.grid-rows-3 {
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
 .row-span-1 {
   grid-row: span 1 / span 1;
+}
+
+.row-span-2 {
+  grid-row: span 2 / span 2;
 }
 
 .ease-in-out {
@@ -765,9 +770,22 @@ video {
   transition-duration: 500ms;
 }
 
+@-webkit-keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
   }
 }
 
@@ -778,21 +796,43 @@ video {
   }
 }
 
+@-webkit-keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
 @keyframes pulse {
   50% {
     opacity: .5;
   }
 }
 
-@keyframes bounce {
+@-webkit-keyframes bounce {
   0%, 100% {
     transform: translateY(-25%);
-    animation-timing-function: cubic-bezier(0.8,0,1,1);
+    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
+            animation-timing-function: cubic-bezier(0.8,0,1,1);
   }
 
   50% {
     transform: none;
-    animation-timing-function: cubic-bezier(0,0,0.2,1);
+    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
+            animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
+            animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50% {
+    transform: none;
+    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
+            animation-timing-function: cubic-bezier(0,0,0.2,1);
   }
 }
 
@@ -800,19 +840,52 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, '애플 SD 산돌고딕 Neo', 'Apple SD Gothic Neo', 'Nanum Gothic', Helvetica, Arial, sans-serif;
 }
 
-.coding-background {
-  background-image: url(images/coding_bg.jpg);
-  transition: background-image 500ms ease-in-out;
-}
-
 .original-background {
-  background-image: url(images/blank-transparent.png);
-  transition: background-image 500ms ease-in-out;
+  background: white;
+  transition: background 500ms ease-in-out;
 }
 
 .dark-background {
-  background-image: url(images/dark-background.png);
-  transition: background-image 500ms ease-in-out;
+  background: #DEE2E6;
+  transition: background 500ms ease-in-out;
+}
+
+.coding-background {
+  background: #E9ECEF;
+  transition: background 500ms ease-in-out;
+}
+
+@media (prefers-color-scheme: dark) {
+  .original-background {
+    background: black;
+    transition: background 500ms ease-in-out;
+  }
+
+  .dark-background {
+    background: #495057;
+    transition: background 500ms ease-in-out;
+  }
+
+  .coding-background {
+    background: #343A40;
+    transition: background 500ms ease-in-out;
+  }
+
+  .dark\:text-white {
+    color: white
+  }
+
+  .dark\:text-black {
+    color: black
+  }
+
+  .dark\:bg-white {
+    background-color: white
+  }
+
+  .dark\:bg-black {
+    background-color: black
+  }
 }
 
 * {
@@ -820,7 +893,7 @@ body {
 }
 
 .lang-icons {
-  max-width: calc(50vh - 1rem - 1rem - 1rem - 1rem);
+  max-width: calc(50vh - 4rem);
 }
 
 .my-profile {
@@ -837,16 +910,8 @@ body {
 }
 
 @media (min-width: 1024px) {
-  .lg\:block {
-    display: block;
-  }
-
   .lg\:flex {
     display: flex;
-  }
-
-  .lg\:hidden {
-    display: none;
   }
 
   .lg\:flex-row {
@@ -863,6 +928,10 @@ body {
 
   .lg\:justify-center {
     justify-content: center;
+  }
+
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .lg\:col-span-1 {

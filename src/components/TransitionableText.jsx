@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 
 const TransitionableText = props => {
   const {
-    dark,
-    light,
+    dark = false,
+    light = false,
     background,
     bold,
     as = 'h1',
@@ -12,7 +12,9 @@ const TransitionableText = props => {
     resize = true,
     midSize = '6xl',
     className = '',
-    children
+    children,
+    darkModeMatter = true,
+    ...others
   } = props
 
   const As = as
@@ -32,19 +34,33 @@ const TransitionableText = props => {
     if (background) {
       classes.push('text-black')
       classes.push('bg-white')
+      if (darkModeMatter) {
+        classes.push('dark:text-white')
+        classes.push('dark:bg-black')
+      }
     } else {
       classes.push('text-white')
+      if (darkModeMatter) {
+        classes.push('dark:text-black')
+      }
     }
   } else if (light) {
     if (background) {
       classes.push('text-white')
       classes.push('bg-black')
+      if (darkModeMatter) {
+        classes.push('dark:text-black')
+        classes.push('dark:bg-white')
+      }
     } else {
       classes.push('text-black')
+      if (darkModeMatter) {
+        classes.push('dark:text-white')
+      }
     }
   }
 
-  return <As className={classes.join(' ')}>{children}</As>
+  return <As className={classes.join(' ')} {...others}>{children}</As>
 }
 
 TransitionableText.propTypes = {
@@ -57,6 +73,7 @@ TransitionableText.propTypes = {
   resize: PropTypes.bool,
   midSize: PropTypes.string,
   className: PropTypes.string,
+  darkModeMatter: PropTypes.bool,
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.string])
 }
 

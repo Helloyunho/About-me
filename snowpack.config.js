@@ -11,11 +11,14 @@ module.exports = {
         imports: {
           '*': true
         },
-        dev: true
+        dev: false
       }
-    ]
+    ],
+    '@snowpack/plugin-postcss'
   ],
-  scripts: { 'build:css': 'postcss' }
+  devOptions: {
+    port: 3000
+  }
 }
 
 console.log('Fcuk')

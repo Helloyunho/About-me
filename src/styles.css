@@ -8,29 +8,75 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, '애플 SD 산돌고딕 Neo', 'Apple SD Gothic Neo', 'Nanum Gothic', Helvetica, Arial, sans-serif;
 }
 
-.coding-background {
-  background-image: url(images/coding_bg.jpg);
-  transition: background-image 500ms ease-in-out;
+.page1-background {
+  background: #E9ECEF;
+  transition: background 500ms ease-in-out;
 }
 
-.original-background {
-  background-image: url(images/blank-transparent.png);
-  transition: background-image 500ms ease-in-out;
+.page2-background {
+  background: #DEE2E6;
+  transition: background 500ms ease-in-out;
 }
 
-.dark-background {
-  background-image: url(images/dark-background.png);
-  transition: background-image 500ms ease-in-out;
+@media (min-width: 1024px) {
+  .my-profile {
+    background: #f8f9fa;
+    box-shadow:  calc(calc(50vh - 10rem) * 0.04) calc(calc(50vh - 10rem) * 0.04) calc(calc(50vh - 10rem) * 0.08) #d3d4d5,
+                calc(calc(50vh - 10rem) * -0.04) calc(calc(50vh - 10rem) * -0.04) calc(calc(50vh - 10rem) * 0.08) #ffffff;
+  }
 }
 
+.my-profile {
+  background: #f8f9fa;
+  box-shadow:  calc(calc(512px - 10rem) * 0.04) calc(calc(512px - 10rem) * 0.04) calc(calc(512px - 10rem) * 0.08) #d3d4d5,
+              calc(calc(512px - 10rem) * -0.04) calc(calc(512px - 10rem) * -0.04) calc(calc(512px - 10rem) * 0.08) #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  .page1-background {
+    background: #343A40;
+    transition: background 500ms ease-in-out;
+  }
+
+  .page2-background {
+    background: #495057;
+    transition: background 500ms ease-in-out;
+  }
+
+  /* .dark\:text-white {
+    color: white
+  }
+
+  .dark\:text-black {
+    color: black
+  }
+
+  .dark\:bg-white {
+    background-color: white
+  }
+  
+  .dark\:bg-black {
+    background-color: black
+  } */
+
+  @media (min-width: 1024px) {
+    .my-profile {
+      background: #343A40;
+      box-shadow:  calc(calc(50vh - 10rem) * 0.04) calc(calc(50vh - 10rem) * 0.04) calc(calc(50vh - 10rem) * 0.08) #262a2f,
+                  calc(calc(50vh - 10rem) * -0.04) calc(calc(50vh - 10rem) * -0.04) calc(calc(50vh - 10rem) * 0.08) #424a51;
+    }
+  }
+
+  .my-profile {
+    background: #343A40;
+    box-shadow:  calc(calc(512px - 10rem) * 0.04) calc(calc(512px - 10rem) * 0.04) calc(calc(512px - 10rem) * 0.08) #262a2f,
+                calc(calc(512px - 10rem) * -0.04) calc(calc(512px - 10rem) * -0.04) calc(calc(512px - 10rem) * 0.08) #424a51;
+  }
+}
 * {
   word-break: keep-all;
 }
 
 .lang-icons {
-  max-width: calc(50vh - 1rem - 1rem - 1rem - 1rem);
-}
-
-.my-profile {
-  max-width: 39.0625%;
+  max-width: calc(50vh - 4rem);
 }
