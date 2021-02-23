@@ -8,7 +8,7 @@ import { useMedia } from 'react-media'
 const Page3 = () => {
   const { t } = useTranslation('page3')
   const isWide = useMedia({
-    queries: { wide: '(min-width: 1280px)', ultraWide: '(min-width: 1300px)' }
+    queries: { wide: '(min-width: 1280px)', ultraWide: '(min-width: 1366px)' }
   })
 
   return (
