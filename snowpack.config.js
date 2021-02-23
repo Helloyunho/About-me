@@ -5,15 +5,15 @@ module.exports = {
   },
   plugins: [
     '@snowpack/plugin-react-refresh',
-    [
-      'snowpack-plugin-import-map',
-      {
-        imports: {
-          '*': true
-        },
-        dev: false
-      }
-    ],
+    // [
+    //   'snowpack-plugin-import-map',
+    //   {
+    //     imports: {
+    //       '*': true
+    //     },
+    //     dev: false
+    //   }
+    // ],
     '@snowpack/plugin-postcss'
   ],
   devOptions: {
