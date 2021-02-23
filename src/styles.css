@@ -18,6 +18,11 @@ body {
   transition: background 500ms ease-in-out;
 }
 
+.page3-background {
+  background: #ced4da;
+  transition: background 500ms ease-in-out;
+}
+
 @media (min-width: 1024px) {
   .my-profile {
     background: #f8f9fa;
@@ -40,6 +45,11 @@ body {
 
   .page2-background {
     background: #495057;
+    transition: background 500ms ease-in-out;
+  }
+
+  .page3-background {
+    background: #6c757d;
     transition: background 500ms ease-in-out;
   }
 

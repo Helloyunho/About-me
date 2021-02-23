@@ -1,91 +1,59 @@
 import React from 'react'
 import TransitionableText from '../../components/TransitionableText'
-import Swift from '../../images/languages/swift.svg'
-import JS from '../../images/languages/js.svg'
-import Python from '../../images/languages/python.svg'
-import Rust from '../../images/languages/rust.svg'
-import { darkPages } from '../../config'
-import PropTypes from 'prop-types'
+import { useTranslation } from 'react-i18next'
+import GitHubRepoCard from '../../components/GitHubRepoCard'
+import { repositories } from '../../config'
+import { useMedia } from 'react-media'
 
-const Page3 = ({ currentPage }) => {
+const Page3 = () => {
+  const { t } = useTranslation('page3')
+  const isWide = useMedia({
+    query: '(min-width: 1024px)'
+  })
+
   return (
     <div className='section'>
-      <div className='w-screen h-screen grid xl:grid-cols-3 grid-rows-2'>
+      <div className='w-screen h-screen grid xl:grid-cols-2 grid-rows-2'>
         <div className='xl:col-span-1 xl:row-span-2 row-span-1'>
           <div className='h-full flex items-center justify-center'>
-            <div className='grid grid-cols-2 grid-rows-2 gap-4 lang-icons'>
-              <div className='grid-flow-col grid-flow-row'>
-                <img src={Swift} alt='Swift' className='w-full' />
-                <TransitionableText
-                  dark={darkPages.includes(currentPage)}
-                  light={!darkPages.includes(currentPage)}
-                  size='base'
-                  className='text-center'>
-                  Swift (?)
-                </TransitionableText>
-              </div>
-              <div className='grid-flow-col grid-flow-row'>
-                <img src={JS} alt='JS' className='w-full' />
-                <TransitionableText
-                  dark={darkPages.includes(currentPage)}
-                  light={!darkPages.includes(currentPage)}
-                  size='base'
-                  className='text-center'>
-                  JavaScript
-                </TransitionableText>
-              </div>
-              <div className='grid-flow-col grid-flow-row'>
-                <img src={Python} alt='Python' className='w-full' />
-                <TransitionableText
-                  dark={darkPages.includes(currentPage)}
-                  light={!darkPages.includes(currentPage)}
-                  size='base'
-                  className='text-center'>
-                  Python
-                </TransitionableText>
-              </div>
-              <div className='grid-flow-col grid-flow-row'>
-                <img src={Rust} alt='Rust' className='w-full' />
-                <TransitionableText
-                  dark={darkPages.includes(currentPage)}
-                  light={!darkPages.includes(currentPage)}
-                  size='base'
-                  className='text-center'>
-                  Rust
-                </TransitionableText>
-              </div>
+            <div className='px-8 grid grid-cols-2 grid-rows-2 gap-8'>
+              {repositories.map(({ owner, repo }, index) => (
+                <div className='grid-flow-col grid-flow-row' key={index}>
+                  <GitHubRepoCard owner={owner} repo={repo} />
+                </div>
+              ))}
             </div>
           </div>
         </div>
-        <div className='xl:col-span-2 xl:row-span-2 row-span-1'>
-          <div className='h-full xl:flex xl:flex-col xl:justify-center xl:items-center'>
-            <div className='xl:flex xl:flex-col'>
-              <div className='xl:flex xl:flex-row'>
-                <TransitionableText
-                  dark={darkPages.includes(currentPage)}
-                  light={!darkPages.includes(currentPage)}
-                  bold>
-                  저는&nbsp;
+        <div className='xl:col-span-1 xl:row-span-2 row-span-1'>
+          <div className='h-full grid lg:flex lg:flex-col lg:justify-center lg:items-center'>
+            <div className='m-auto lg:flex lg:flex-col'>
+              <TransitionableText light bold>
+                {t('reposPrefix')}
+              </TransitionableText>
+              <div className='lg:flex lg:flex-row'>
+                <TransitionableText light bold background>
+                  {[
+                    ...repositories.reduce((prev, curr) => {
+                      if (
+                        [...prev, curr.repo, t('etc')].join(', ').length < 24
+                      ) {
+                        return [...prev, curr.repo]
+                      } else {
+                        return prev
+                      }
+                    }, []),
+                    t('etc')
+                  ].join(', ')}
                 </TransitionableText>
-                <TransitionableText
-                  dark={darkPages.includes(currentPage)}
-                  light={!darkPages.includes(currentPage)}
-                  bold
-                  background>
-                  Swift, JS, Python, Rust
+                <TransitionableText light bold>
+                  {isWide
+                    ? t('reposSuffix').replace(/ /g, '\u00a0')
+                    : t('reposSuffix')}
                 </TransitionableText>
               </div>
-              <TransitionableText
-                dark={darkPages.includes(currentPage)}
-                light={!darkPages.includes(currentPage)}
-                bold>
-                언어들을 사용합니다.
-              </TransitionableText>
-              <TransitionableText
-                dark={darkPages.includes(currentPage)}
-                light={!darkPages.includes(currentPage)}
-                size='base'>
-                이 아이콘들을 제공해주신 ppapman님 감사합니다.
+              <TransitionableText light size='base' resize={false}>
+                {t('awesome')}
               </TransitionableText>
             </div>
           </div>
@@ -93,10 +61,6 @@ const Page3 = ({ currentPage }) => {
       </div>
     </div>
   )
-}
-
-Page3.propTypes = {
-  currentPage: PropTypes.number.isRequired
 }
 
 export default Page3

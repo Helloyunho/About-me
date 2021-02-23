@@ -2,6 +2,7 @@ import React from 'react'
 import ReactFullpage from '@fullpage/react-fullpage'
 import Page1 from './Page1'
 import Page2 from './Page2'
+import Page3 from './Page3'
 
 const Index = () => {
   const [page, setPage] = React.useState(0)
@@ -31,7 +32,6 @@ const Index = () => {
               page + 1
             }-background`}>
             <Page1
-              currentPage={page}
               pauseFullpage={() => {
                 fullpageApi.setAllowScrolling(false)
               }}
@@ -39,7 +39,8 @@ const Index = () => {
                 fullpageApi.setAllowScrolling(true)
               }}
             />
-            <Page2 currentPage={page} />
+            <Page2 />
+            <Page3 />
           </div>
         </>
       )}
