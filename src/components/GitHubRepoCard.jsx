@@ -11,7 +11,12 @@ const GitHubRepoInfo = ({ data }) => {
     <>
       <div className='flex-initial'>
         <FontAwesomeIcon icon={faBook} className='text-gray-800' size='lg' />
-        <a href={data.url} className='text-blue-600 hover:underline'>
+        <a
+          href={data.url}
+          className='text-blue-600 hover:underline'
+          style={{
+            overflowWrap: 'break-word'
+          }}>
           <span className='pl-2'>{data.owner}/</span>
           <span className='font-semibold'>{data.name}</span>
         </a>
