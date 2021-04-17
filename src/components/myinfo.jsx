@@ -35,13 +35,13 @@ const MyInfo = () => {
         <div className='px-6 py-4 border-2 border-b-0'>
           <p className='text-base'>
             <FontAwesomeIcon icon={faDiscord} />
-            &nbsp; Discord [🅷🅴🅻🅻🅾🆈🆄🅽🅷🅾]#1868
+            &nbsp; Discord Helloyunho#2004
           </p>
         </div>
         <div
           className='px-6 py-4 border-2 border-b-0 cursor-pointer'
           onClick={() =>
-            (window.location.href = 'https://twitter.com/yunho098765')
+            (window.location.href = 'https://twitter.com/helloyunho_')
           }>
           <p className='text-base'>
             <FontAwesomeIcon icon={faTwitter} />
