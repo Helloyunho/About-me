@@ -76,7 +76,7 @@ const Page3 = () => {
               <div className='lg:flex lg:flex-row'>
                 <TransitionableText light bold background>
                   {[
-                    ...repositories.reduce((prev, curr) => {
+                    ...repos.reduce((prev, curr) => {
                       if (
                         [...prev, curr.repo, t('etc')].join(', ').length <
                         (isWide.ultraWide ? 24 : 16)
