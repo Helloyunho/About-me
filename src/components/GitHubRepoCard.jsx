@@ -60,41 +60,63 @@ const GitHubRepoCard = ({ owner, repo }) => {
       headers: {
         Accept: 'application/vnd.github.v3+json'
       }
-    }).then((resp) => {
-      if (!resp.ok) {
+    })
+      .then((resp) => {
+        if (!resp.ok) {
+          setRepoInfo({
+            success: false
+          })
+          console.error(`GitHub API Error ${resp.status}: ${resp.statusText}`)
+          return
+        }
+
+        resp
+          .json()
+          .then((data) => {
+            const result = {
+              success: true,
+              data: {
+                name: data.name,
+                owner: data.owner.login,
+                description: data.description,
+                url: data.html_url,
+                forks: data.forks,
+                stars: data.stargazers_count,
+                lang: data.language
+              }
+            }
+
+            fetch(
+              'https://raw.githubusercontent.com/ozh/github-colors/master/colors.json'
+            )
+              .then((resp) => {
+                resp.json().then((colorData) => {
+                  if (colorData[data.language] !== undefined) {
+                    result.data.langColor = colorData[data.language].color
+                  }
+                  setRepoInfo(result)
+                })
+              })
+              .catch((err) => {
+                setRepoInfo({
+                  success: false
+                })
+                console.error(err)
+              })
+          })
+          .catch((err) => {
+            setRepoInfo({
+              success: false
+            })
+            console.error(err)
+          })
+      })
+      .catch((err) => {
         setRepoInfo({
           success: false
         })
-        console.error(`GitHub API Error ${resp.status}: ${resp.statusText}`)
-        return
-      }
-
-      resp.json().then((data) => {
-        const result = {
-          success: true,
-          data: {
-            name: data.name,
-            owner: data.owner.login,
-            description: data.description,
-            url: data.html_url,
-            forks: data.forks,
-            stars: data.stargazers_count,
-            lang: data.language
-          }
-        }
-
-        fetch(
-          'https://raw.githubusercontent.com/ozh/github-colors/master/colors.json'
-        ).then((resp) => {
-          resp.json().then((colorData) => {
-            if (colorData[data.language] !== undefined) {
-              result.data.langColor = colorData[data.language].color
-            }
-            setRepoInfo(result)
-          })
-        })
+        console.error(err)
       })
-    })
   }, [])
 
   return (

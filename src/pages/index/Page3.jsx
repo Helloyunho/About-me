@@ -10,6 +10,40 @@ const Page3 = () => {
   const isWide = useMedia({
     queries: { wide: '(min-width: 1280px)', ultraWide: '(min-width: 1366px)' }
   })
+  const [repos, setRepos] = React.useState({})
+  React.useEffect(() => {
+    fetch('https://gh-pinned-repos.egoist.sh/?username=Helloyunho', {
+      headers: {
+        Accept: 'application/json'
+      }
+    }).then((resp) => {
+      if (!resp.ok) {
+        setRepos({
+          success: false
+        })
+        console.error(
+          `GitHub Pinned Repos API Error ${resp.status}: ${resp.statusText}`
+        )
+        return
+      }
+
+      resp
+        .json()
+        .then((data) => {
+          const result = {
+            success: true,
+            data
+          }
+          setRepos(result)
+        })
+        .catch((err) => {
+          setRepos({
+            success: false
+          })
+          console.error(err)
+        })
+    })
+  }, [])
 
   return (
     <div className='section'>
@@ -17,13 +51,20 @@ const Page3 = () => {
         <div className='xl:col-span-1 xl:row-span-2 row-span-1'>
           <div className='h-full flex items-center justify-center'>
             <div className='px-8 grid xl:grid-cols-2 grid-cols-1 grid-rows-2 gap-8'>
-              {repositories
-                .map(({ owner, repo }, index) => (
-                  <div className='grid-flow-col grid-flow-row' key={index}>
-                    <GitHubRepoCard owner={owner} repo={repo} />
-                  </div>
-                ))
-                .slice(0, isWide.wide ? undefined : 2)}
+              {/* eslint-disable-next-line */}
+              {repos.success === undefined ? (
+                <span>Wait a moment...</span> /* eslint-disable-next-line */
+              ) : !repos.success ? (
+                <span>Fetching repositories failed!</span>
+              ) : (
+                repos.data
+                  .map(({ owner, repo }, index) => (
+                    <div className='grid-flow-col grid-flow-row' key={index}>
+                      <GitHubRepoCard owner={owner} repo={repo} />
+                    </div>
+                  ))
+                  .slice(0, isWide.wide ? 4 : 2)
+              )}
             </div>
           </div>
         </div>
