@@ -2,7 +2,6 @@ import React from 'react'
 import TransitionableText from '../../components/TransitionableText'
 import { useTranslation } from 'react-i18next'
 import GitHubRepoCard from '../../components/GitHubRepoCard'
-import { repositories } from '../../config'
 import { useMedia } from 'react-media'
 
 const Page3 = () => {
