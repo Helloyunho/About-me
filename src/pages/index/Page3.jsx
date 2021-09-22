@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React from 'react'
 import TransitionableText from '../../components/TransitionableText'
 import { useTranslation } from 'react-i18next'
@@ -75,19 +76,24 @@ const Page3 = () => {
               </TransitionableText>
               <div className='lg:flex lg:flex-row'>
                 <TransitionableText light bold background>
-                  {[
-                    ...repos.reduce((prev, curr) => {
-                      if (
-                        [...prev, curr.repo, t('etc')].join(', ').length <
-                        (isWide.ultraWide ? 24 : 16)
-                      ) {
-                        return [...prev, curr.repo]
-                      } else {
-                        return prev
-                      }
-                    }, []),
-                    t('etc')
-                  ].join(', ')}
+                  {/* eslint-disable-next-line */}
+                  {repos.success === undefined
+                    ? 'Wait a moment...'
+                    : !repos.success
+                    ? 'Fetching repositories failed!'
+                    : [
+                        ...repos.data.reduce((prev, curr) => {
+                          if (
+                            [...prev, curr.repo, t('etc')].join(', ').length <
+                            (isWide.ultraWide ? 24 : 16)
+                          ) {
+                            return [...prev, curr.repo]
+                          } else {
+                            return prev
+                          }
+                        }, []),
+                        t('etc')
+                      ].join(', ')}
                 </TransitionableText>
                 <TransitionableText light bold>
                   {isWide.wide
