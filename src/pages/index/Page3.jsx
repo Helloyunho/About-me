@@ -12,7 +12,7 @@ const Page3 = () => {
   })
   const [repos, setRepos] = React.useState({})
   React.useEffect(() => {
-    fetch('https://gh-pinned-repos.egoist.sh/?username=Helloyunho', {
+    fetch('https://gh-pinned-repos.egoist.dev/?username=Helloyunho', {
       headers: {
         Accept: 'application/json'
       }
