@@ -38,6 +38,44 @@ import useSWR from 'swr'
 import { PinnedRepoPayload } from '../types/pinnedRepo'
 
 const myBirthday = new Date(2005, 8, 10) // celebrate me!!
+const languages: {
+  name: string
+  logo: string
+  level: number
+  colorScheme: string
+  description: string
+}[] = [
+  {
+    name: 'TypeScript',
+    logo: tsLogo,
+    level: 90,
+    colorScheme: 'blue',
+    description: 'I use TypeScript to make web apps and libraries.'
+  },
+  {
+    name: 'JavaScript',
+    logo: jsLogo,
+    level: 80,
+    colorScheme: 'yellow',
+    description:
+      'I also use JavaScript for small projects and quick prototyping.'
+  },
+  {
+    name: 'Swift',
+    logo: swiftLogo,
+    level: 75,
+    colorScheme: 'orange',
+    description:
+      "I use Swift to make some native apps and libraries, also it's my favorite language."
+  },
+  {
+    name: 'Python',
+    logo: pythonLogo,
+    level: 90,
+    colorScheme: 'blue',
+    description: 'I use Python to do some quick, non important process.'
+  }
+]
 const fetcher = (url: string) => fetch(url).then((r) => r.json())
 
 export const Page1 = () => {
@@ -121,60 +159,28 @@ export const Page1 = () => {
         <Box py='1'>
           <Heading fontSize='xl'>Programming language</Heading>
           <SimpleGrid columns={{ base: 1, sm: 2 }} spacing='8' my='4'>
-            <Card direction={{ base: 'column', sm: 'row' }} overflow='hidden'>
-              <Image objectFit='cover' src={tsLogo} alt='TypeScript'></Image>
+            {languages.map((language) => (
+              <Card
+                direction={{ base: 'column', sm: 'row' }}
+                overflow='hidden'
+                key={language.name}>
+                <Image
+                  objectFit='cover'
+                  src={language.logo}
+                  alt={language.name}
+                  w={{ base: 'unset', sm: '30%' }}></Image>
 
-              <CardBody>
-                <Heading fontSize='xl'>TypeScript</Heading>
+                <CardBody>
+                  <Heading fontSize='xl'>{language.name}</Heading>
 
-                <Text py='2'>
-                  I use TypeScript to make web apps and libraries.
-                </Text>
-                <Progress value={90} colorScheme='blue' />
-              </CardBody>
-            </Card>
-            <Card direction={{ base: 'column', sm: 'row' }} overflow='hidden'>
-              <Image
-                objectFit='cover'
-                src={jsLogo}
-                alt='JavaScript'
-                h='100%'></Image>
-
-              <CardBody>
-                <Heading fontSize='xl'>JavaScript</Heading>
-
-                <Text py='2'>
-                  I also use JavaScript for small projects and quick
-                  prototyping.
-                </Text>
-                <Progress value={80} colorScheme='yellow' />
-              </CardBody>
-            </Card>
-            <Card direction={{ base: 'column', sm: 'row' }} overflow='hidden'>
-              <Image objectFit='cover' src={swiftLogo} alt='Swift'></Image>
-
-              <CardBody>
-                <Heading fontSize='xl'>Swift</Heading>
-
-                <Text py='2'>
-                  I use Swift to make some native apps and libraries, also it's
-                  my favorite language.
-                </Text>
-                <Progress value={75} colorScheme='orange' />
-              </CardBody>
-            </Card>
-            <Card direction={{ base: 'column', sm: 'row' }} overflow='hidden'>
-              <Image objectFit='cover' src={pythonLogo} alt='Python'></Image>
-
-              <CardBody>
-                <Heading fontSize='xl'>Python</Heading>
-
-                <Text py='2'>
-                  I use Python to do some quick, non important process.
-                </Text>
-                <Progress value={90} colorScheme='blue' />
-              </CardBody>
-            </Card>
+                  <Text py='2'>{language.description}</Text>
+                  <Progress
+                    value={language.level}
+                    colorScheme={language.colorScheme}
+                  />
+                </CardBody>
+              </Card>
+            ))}
           </SimpleGrid>
           <Text color='GrayText'>
             The Swift logo is a trademark of Apple Inc.
@@ -201,8 +207,7 @@ export const Page1 = () => {
                   transition='background-color 0.1s ease-in-out'>
                   <Image
                     objectFit='contain'
-                    h='auto'
-                    w='auto'
+                    w={{ base: 'unset', sm: '30%' }}
                     src={repo.image}
                     alt={repo.repo}></Image>
                   <Stack w='full'>
@@ -226,7 +231,7 @@ export const Page1 = () => {
         </Skeleton>
       </Container>
       <footer>
-        <Center>
+        <Center p='4'>
           <Text>© 2022 Helloyunho</Text>
         </Center>
       </footer>
