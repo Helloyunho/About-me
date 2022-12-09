@@ -17,7 +17,8 @@ import {
   Progress,
   useColorMode,
   CardFooter,
-  Skeleton
+  Skeleton,
+  Button
 } from '@chakra-ui/react'
 import NavBar from '../components/navbar'
 import myProfile from '../images/avatar.png'
@@ -80,6 +81,7 @@ const fetcher = (url: string) => fetch(url).then((r) => r.json())
 
 export const Page1 = () => {
   const { colorMode } = useColorMode()
+  // TODO: handle error
   const { data: repos, error }: { data?: PinnedRepoPayload[]; error?: any } =
     useSWR('https://gh-pinned-repos.egoist.dev/?username=Helloyunho', fetcher)
 
@@ -221,18 +223,26 @@ export const Page1 = () => {
                     <Divider />
                     <CardFooter alignItems='center' justifyContent='end'>
                       <Text>Go check it out!</Text>
-                      <ArrowForwardIcon />
+                      <ArrowForwardIcon pl='0.5' />
                     </CardFooter>
                   </Stack>
                 </Card>
               </a>
             ))}
+            <a href='https://github.com/Helloyunho'>
+              <Button>And more...</Button>
+            </a>
           </Stack>
         </Skeleton>
       </Container>
       <footer>
         <Center p='4'>
-          <Text>© 2022 Helloyunho</Text>
+          <VStack>
+            <Text>Made with ❤️ by Helloyunho</Text>
+            <a href='https://github.com/Helloyunho/About-me'>
+              <Text>Also the whole site is open-sourced!</Text>
+            </a>
+          </VStack>
         </Center>
       </footer>
     </>
