@@ -18,8 +18,10 @@ import {
   useColorMode,
   CardFooter,
   Skeleton,
-  Button
+  Button,
+  Link
 } from '@chakra-ui/react'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
 import NavBar from '../components/navbar'
 import myProfile from '../images/avatar.png'
 import jsLogo from '../images/js.svg'
@@ -84,6 +86,10 @@ export const Page1 = () => {
   // TODO: handle error
   const { data: repos, error }: { data?: PinnedRepoPayload[]; error?: any } =
     useSWR('https://gh-pinned-repos.egoist.dev/?username=Helloyunho', fetcher)
+
+  React.useEffect(() => {
+    console.error(error)
+  }, [error])
 
   return (
     <>
@@ -195,7 +201,7 @@ export const Page1 = () => {
         <Heading fontSize='2xl' py='2'>
           What I developed
         </Heading>
-        <Skeleton isLoaded={repos !== undefined}>
+        <Skeleton isLoaded={repos !== undefined || error !== undefined}>
           <Stack spacing='8' my='4'>
             {repos?.map((repo) => (
               <a href={repo.link} key={repo.link}>
@@ -228,10 +234,33 @@ export const Page1 = () => {
                   </Stack>
                 </Card>
               </a>
-            ))}
-            <a href='https://github.com/Helloyunho'>
-              <Button>And more...</Button>
-            </a>
+            )) ?? (
+              <VStack alignItems='start'>
+                <Text>
+                  Umm... an error has occured while getting my projects from
+                  github..!
+                </Text>
+                <Text>
+                  Try refreshing the page and if the error still occurs, please
+                  contact me!
+                </Text>
+                <Text>
+                  ...Or click the button below to go to my GitHub profile.
+                </Text>
+                <Text color='GrayText' fontSize='sm'>
+                  Fun little fact: You can see the error log on your browser
+                  console.
+                </Text>
+              </VStack>
+            )}
+            <Button as='a' href='https://github.com/Helloyunho'>
+              <HStack>
+                <Text>
+                  {error === undefined ? 'And more...' : 'Click here!'}
+                </Text>
+                <ExternalLinkIcon />
+              </HStack>
+            </Button>
           </Stack>
         </Skeleton>
       </Container>
@@ -239,9 +268,9 @@ export const Page1 = () => {
         <Center p='4'>
           <VStack>
             <Text>Made with ❤️ by Helloyunho</Text>
-            <a href='https://github.com/Helloyunho/About-me'>
-              <Text>Also the whole site is open-sourced!</Text>
-            </a>
+            <Link href='https://github.com/Helloyunho/About-me'>
+              Also the whole site is open-sourced!
+            </Link>
           </VStack>
         </Center>
       </footer>
