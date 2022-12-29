@@ -34,7 +34,7 @@ const NavBar = () => {
           </Box>
           <Spacer />
           <Box>
-            <HStack spacing='4' display={['none', 'flex']}>
+            <HStack spacing='4' display='flex'>
               <IconButton
                 aria-label='switch-theme'
                 icon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
