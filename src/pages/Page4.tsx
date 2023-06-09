@@ -1,12 +1,9 @@
 import type { Component } from 'solid-js'
 import Page from '../components/Page'
 
-const Page4: Component<{
-  activeIndex: 0 | 1 | 2 | 3
-  onClick: (index: 0 | 1 | 2 | 3) => void
-}> = ({ activeIndex, onClick }) => {
+const Page4: Component = () => {
   return (
-    <Page activeIndex={activeIndex} onClick={onClick}>
+    <Page>
       <div class='flex justify-around items-start flex-grow flex-col py-8 pl-12.5% h-full'>
         <div class='flex flex-col'> {/* dummy element */}</div>
         <div class='flex flex-col gap-2'>

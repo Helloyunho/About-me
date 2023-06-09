@@ -4,10 +4,7 @@ import { createResource } from 'solid-js'
 import Page from '../components/Page'
 import type { PinnedRepoPayload } from '../types/pinnedRepo'
 
-const Page3: Component<{
-  activeIndex: 0 | 1 | 2 | 3
-  onClick: (index: 0 | 1 | 2 | 3) => void
-}> = ({ activeIndex, onClick }) => {
+const Page3: Component = () => {
   const [pinnedProjects] = createResource<PinnedRepoPayload[]>(async () => {
     const resp = await fetch(
       'https://gh-pinned-repos.egoist.dev/?username=Helloyunho'
@@ -16,7 +13,7 @@ const Page3: Component<{
   })
 
   return (
-    <Page activeIndex={activeIndex} onClick={onClick}>
+    <Page>
       <div class='p-16 flex justify-center gap-12 items-center flex-col'>
         {pinnedProjects.loading ? (
           <div class='flex justify-between items-center w-full'>
