@@ -15,7 +15,7 @@ const Page3: Component = () => {
   return (
     <Page>
       <div
-        class='p-16 flex justify-center gap-12 items-center flex-col'
+        class='px-16 py-24 flex justify-center gap-12 items-center flex-col'
         id='page3'
       >
         {pinnedProjects.loading ? (
