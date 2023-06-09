@@ -103,7 +103,7 @@ const Page2: Component<{
             </p>
           </div>
         </div>
-        <div class='flex flex-col'>
+        <div class='flex flex-col gap-2'>
           <p class='text-size-5xl line-height-normal font-bold m-0 color-white mix-blend-difference'>
             Languages I Use
           </p>
