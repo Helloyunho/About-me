@@ -1,3 +1,4 @@
+/* eslint-disable multiline-ternary */
 import type { Component } from 'solid-js'
 import { createResource } from 'solid-js'
 import Page from '../components/Page'
@@ -17,7 +18,6 @@ const Page3: Component<{
   return (
     <Page activeIndex={activeIndex} onClick={onClick}>
       <div class='p-16 flex justify-center gap-12 items-center flex-col'>
-        {/* eslint-disable-next-line multiline-ternary */}
         {pinnedProjects.loading ? (
           <div class='flex justify-between items-center w-full'>
             <div class='flex flex-col'>
@@ -26,9 +26,7 @@ const Page3: Component<{
               </p>
             </div>
           </div>
-        ) : // eslint-disable-line operator-linebreak
-        // eslint-disable-next-line multiline-ternary, @typescript-eslint/indent
-        pinnedProjects.error !== undefined ? (
+        ) : pinnedProjects.error !== undefined ? (
           <div class='flex justify-between items-center w-full'>
             <div class='flex flex-col'>
               <p class='text-size-4xl line-height-normal font-bold m-0 color-white mix-blend-difference'>

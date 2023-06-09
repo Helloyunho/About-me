@@ -7,7 +7,7 @@ const Page2: Component<{
 }> = ({ activeIndex, onClick }) => {
   return (
     <Page activeIndex={activeIndex} onClick={onClick}>
-      <div class='flex justify-around items-start flex-grow flex-col py-8 pl-11.1% h-full'>
+      <div class='flex justify-around items-start flex-grow flex-col py-8 pl-12.5% h-full'>
         <div class='flex flex-col'>
           <div class='flex'>
             <p class='text-size-4xl line-height-normal font-medium m-0 color-white mix-blend-difference'>
