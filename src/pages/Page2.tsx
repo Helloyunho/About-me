@@ -1,10 +1,15 @@
 import type { Component } from 'solid-js'
 import Page from '../components/Page'
 
+const myBirthday = new Date(2005, 8, 10) // celebrate me!!
+
 const Page2: Component = () => {
   return (
     <Page>
-      <div class='flex justify-around items-start flex-grow flex-col py-8 pl-12.5% h-full'>
+      <div
+        class='flex justify-around items-start flex-grow flex-col py-8 pl-12.5% h-full'
+        id='page2'
+      >
         <div class='flex flex-col'>
           <div class='flex'>
             <p class='text-size-4xl line-height-normal font-medium m-0 color-white mix-blend-difference'>
@@ -16,7 +21,7 @@ const Page2: Component = () => {
             <p class='text-size-4xl line-height-normal font-medium m-0 color-white mix-blend-difference'>
               , a&nbsp;
             </p>
-            <button class='flex border-none bg-base cursor-pointer p-0'>
+            <a href='#page3'>
               <p
                 class='text-size-4xl line-height-normal font-semibold m-0 underline underline-4 color-white mix-blend-difference'
                 style={{
@@ -25,7 +30,7 @@ const Page2: Component = () => {
               >
                 Frontend developer
               </p>
-            </button>
+            </a>
             <p class='text-size-4xl line-height-normal font-medium m-0'>
               &nbsp;👩🏼‍💻
             </p>
@@ -49,7 +54,7 @@ const Page2: Component = () => {
               I'm&nbsp;
             </p>
             <p class='text-size-4xl line-height-normal font-semibold m-0 color-white mix-blend-difference'>
-              17
+              {new Date(Date.now() - myBirthday.getTime()).getFullYear() - 1970}
             </p>
             <p class='text-size-4xl line-height-normal font-medium m-0 color-white mix-blend-difference'>
               &nbsp;years old, and I'm from&nbsp;
@@ -82,7 +87,7 @@ const Page2: Component = () => {
             <p class='text-size-4xl line-height-normal font-medium m-0 color-white mix-blend-difference'>
               Feel free to&nbsp;
             </p>
-            <button class='flex border-none bg-base cursor-pointer p-0'>
+            <a href='#page4'>
               <p
                 class='text-size-4xl line-height-normal font-semibold m-0 underline underline-4 color-white mix-blend-difference'
                 style={{
@@ -91,7 +96,7 @@ const Page2: Component = () => {
               >
                 contact me
               </p>
-            </button>
+            </a>
             <p class='text-size-4xl line-height-normal font-medium m-0'>
               &nbsp;💌
             </p>
@@ -105,25 +110,25 @@ const Page2: Component = () => {
             Languages I Use
           </p>
           <div class='flex'>
-            <button class='flex border-none bg-base cursor-pointer p-0'>
+            <a href='https://www.typescriptlang.org/'>
               <p class='text-size-4xl line-height-normal font-semibold m-0 color-#4D7CC1 underline underline-4'>
                 TypeScript
               </p>
-            </button>
+            </a>
             <p class='text-size-4xl line-height-normal font-semibold m-0 color-white mix-blend-difference'>
               ,&nbsp;
             </p>
-            <button class='flex border-none bg-base cursor-pointer p-0'>
+            <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript'>
               <p class='text-size-4xl line-height-normal font-semibold m-0 color-#E5DE30 underline underline-4'>
                 JavaScript
               </p>
-            </button>
+            </a>
             <p class='text-size-4xl line-height-normal font-semibold m-0 color-white mix-blend-difference'>
               ,
             </p>
           </div>
           <div class='flex'>
-            <button class='flex border-none bg-base cursor-pointer p-0'>
+            <a href='https://www.python.org/'>
               <p
                 class='text-size-4xl line-height-normal font-semibold m-0 relative bg-clip-text before:absolute before:top-87% before:left-0 before:h-1 before:bg-python before:w-full before:content-empty'
                 style={{
@@ -134,11 +139,11 @@ const Page2: Component = () => {
               >
                 Python
               </p>
-            </button>
+            </a>
             <p class='text-size-4xl line-height-normal font-semibold m-0 color-white mix-blend-difference'>
               ,&nbsp;
             </p>
-            <button class='flex border-none bg-base cursor-pointer p-0'>
+            <a href='https://www.swift.org/'>
               <p
                 class='text-size-4xl line-height-normal font-semibold m-0 relative bg-clip-text before:absolute before:top-87% before:left-0 before:h-1 before:bg-swift before:w-full before:content-empty'
                 style={{
@@ -149,7 +154,7 @@ const Page2: Component = () => {
               >
                 Swift
               </p>
-            </button>
+            </a>
             <p class='text-size-4xl line-height-normal font-semibold m-0 color-white mix-blend-difference'>
               .
             </p>

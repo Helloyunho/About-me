@@ -14,7 +14,10 @@ const Page3: Component = () => {
 
   return (
     <Page>
-      <div class='p-16 flex justify-center gap-12 items-center flex-col'>
+      <div
+        class='p-16 flex justify-center gap-12 items-center flex-col'
+        id='page3'
+      >
         {pinnedProjects.loading ? (
           <div class='flex justify-between items-center w-full'>
             <div class='flex flex-col'>
@@ -36,11 +39,9 @@ const Page3: Component = () => {
           </div>
         ) : (
           pinnedProjects()?.map((project) => (
-            <button
-              class='border-none bg-base cursor-pointer p-0 flex justify-between items-center w-full'
-              onClick={() => {
-                window.location.href = project.link
-              }}
+            <a
+              class='flex justify-between items-center w-full'
+              href={project.link}
             >
               <div class='flex flex-col items-start'>
                 <p class='text-size-4xl line-height-normal font-bold m-0 color-white mix-blend-difference'>
@@ -52,8 +53,8 @@ const Page3: Component = () => {
                   {project.description}
                 </p>
               </div>
-              <div class='i-tabler-arrow-narrow-right text-2xl' />
-            </button>
+              <div class='i-tabler-arrow-narrow-right text-2xl color-white mix-blend-difference' />
+            </a>
           ))
         )}
       </div>

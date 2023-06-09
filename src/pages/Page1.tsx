@@ -4,12 +4,15 @@ import Page from '../components/Page'
 const Page1: Component = () => {
   return (
     <Page>
-      <div class='flex justify-center items-center flex-grow flex-col'>
+      <div
+        class='flex justify-center items-center flex-grow flex-col'
+        id='page1'
+      >
         <div class='flex'>
           <p class='text-size-6xl line-height-normal font-medium m-0 color-white mix-blend-difference'>
             Hey! I'm&nbsp;
           </p>
-          <button class='border-none bg-base cursor-pointer p-0'>
+          <a href='#page2'>
             <p
               class='text-size-6xl line-height-normal font-bold m-0 underline underline-4 color-white mix-blend-difference'
               style={{
@@ -18,7 +21,7 @@ const Page1: Component = () => {
             >
               Yunho
             </p>
-          </button>
+          </a>
           <p class='text-size-6xl line-height-normal font-medium m-0 color-white mix-blend-difference'>
             .{' '}
           </p>
@@ -27,7 +30,7 @@ const Page1: Component = () => {
           <p class='text-size-6xl line-height-normal font-medium m-0 color-white mix-blend-difference'>
             A&nbsp;
           </p>
-          <button class='flex border-none bg-base cursor-pointer p-0'>
+          <a class='flex' href='#page3'>
             <p
               class='text-size-6xl line-height-normal font-bold m-0 relative bg-clip-text before:absolute before:top-87% before:left-0 before:h-1 before:bg-frontend before:w-full before:content-empty'
               style={{
@@ -46,7 +49,7 @@ const Page1: Component = () => {
             >
               &nbsp;developer
             </p>
-          </button>
+          </a>
           <p class='text-size-6xl line-height-normal font-medium m-0 color-white mix-blend-difference'>
             .{' '}
           </p>

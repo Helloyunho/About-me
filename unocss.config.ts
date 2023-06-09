@@ -30,6 +30,14 @@ export default defineConfig({
   },
   preflights: [
     {
+      getCSS: () => `
+      html {
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+      }
+      `
+    },
+    {
       getCSS: ({ theme }) => `
       body {
         background-color: ${
@@ -44,6 +52,13 @@ export default defineConfig({
       getCSS: () => `
       * {
         font-family: 'Inter', sans-serif;
+      }
+      `
+    },
+    {
+      getCSS: () => `
+      a {
+        text-decoration: none;
       }
       `
     }

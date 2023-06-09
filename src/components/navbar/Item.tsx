@@ -1,21 +1,22 @@
 import type { ParentComponent } from 'solid-js'
+import { createEffect } from 'solid-js'
 
 const NavBarItem: ParentComponent<{
-  isActive: boolean
-  onClick?: () => void
-}> = ({ children, isActive, onClick }) => {
+  href?: string
+  isActive: () => boolean
+}> = ({ children, href, isActive }) => {
   return (
-    <button class='border-none bg-base cursor-pointer' onClick={onClick}>
+    <a class='bg-base' href={href}>
       <p
         class={`${
-          isActive ? 'color-white' : 'color-neutral-500'
+          isActive() ? 'color-white' : 'color-neutral-500'
         } text-size-3xl ${
-          isActive ? 'font-semibold' : 'font-light'
+          isActive() ? 'font-semibold' : 'font-light'
         } mix-blend-difference my-0`}
       >
         {children}
       </p>
-    </button>
+    </a>
   )
 }
 
