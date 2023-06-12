@@ -13,7 +13,7 @@ const NavBarItem: ParentComponent<{
           isActive() ? 'color-white' : 'color-neutral-500'
         } text-size-3xl ${
           isActive() ? 'font-semibold' : 'font-light'
-        } mix-blend-difference my-0 lt-md:hidden`}
+        } mix-blend-difference my-0`}
       >
         #{index}&nbsp;
       </p>
