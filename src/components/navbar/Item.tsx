@@ -1,5 +1,4 @@
 import type { ParentComponent } from 'solid-js'
-import { createEffect } from 'solid-js'
 
 const NavBarItem: ParentComponent<{
   href?: string

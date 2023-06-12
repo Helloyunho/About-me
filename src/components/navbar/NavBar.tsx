@@ -1,6 +1,5 @@
 import type { Component, Accessor } from 'solid-js'
 import NavBarItem from './Item'
-import CustomMenuIcon from '../../assets/menu.svg'
 
 const NavBar: Component<{
   activeIndex: Accessor<0 | 1 | 2 | 3>
