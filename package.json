@@ -1,0 +1,30 @@
+{
+  "name": "@helloyunho/about-me",
+  "version": "0.0.1",
+  "description": "Helloyunho's about me page",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@iconify-json/tabler": "^1.1.79",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@unocss/preset-icons": "^0.53.1",
+    "@unocss/preset-uno": "^0.52.7",
+    "@unocss/reset": "^0.53.0",
+    "@unocss/vite": "^0.49.4",
+    "eslint": "^8.0.1",
+    "eslint-config-standard-with-typescript": "^35.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "typescript": "*",
+    "vite": "^4.1.1",
+    "vite-plugin-solid": "^2.5.0"
+  },
+  "dependencies": {
+    "solid-js": "^1.6.10"
+  }
+}
