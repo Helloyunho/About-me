@@ -55,10 +55,16 @@ const App: Component = () => {
       <Page2 />
       <Page3 />
       <Page4 />
+      {isDrawerOpen() && (
+        <div
+          class='bg-gray-900 bg-opacity-10 fixed inset-0 z-30'
+          onClick={() => setIsDrawerOpen(false)}
+        />
+      )}
       <div
-        class={`fixed py-16 px-10 top-0 left-0 z-40 overflow-y-auto transition-transform ${
+        class={`fixed top-0 left-0 z-40 overflow-y-auto transition-transform transition-duration-500 ease-out w-48 h-screen pt-18 pb-12 px-10 bg-base ${
           isDrawerOpen() ? 'translate-none' : '-translate-x-full'
-        } w-40 bg-base`}
+        }`}
       >
         <div class='flex flex-col gap-2'>
           <NavBarItem
