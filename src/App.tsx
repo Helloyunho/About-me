@@ -37,6 +37,24 @@ const App: Component = () => {
   }
 
   onMount(() => {
+    if (window.matchMedia('(prefers-color-scheme: dark)')?.matches) {
+      document
+        .querySelector('meta[name="theme-color"]')
+        ?.setAttribute('content', '#0A0D12')
+    }
+    window
+      .matchMedia('(prefers-color-scheme: dark)')
+      .addEventListener('change', (event) => {
+        if (event.matches) {
+          document
+            .querySelector('meta[name="theme-color"]')
+            ?.setAttribute('content', '#0A0D12')
+        } else {
+          document
+            .querySelector('meta[name="theme-color"]')
+            ?.setAttribute('content', '#F5F2ED')
+        }
+      })
     window.addEventListener('scroll', handleScroll)
   })
 
