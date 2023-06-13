@@ -14,6 +14,7 @@ const NavBar: Component<{
           onClick={() => {
             setIsDrawerOpen(!isDrawerOpen())
           }}
+          aria-label='Open navigation drawer'
         >
           {/* from https://tabler-icons.io/ */}
           <svg
