@@ -7,7 +7,7 @@ const Page2: Component = () => {
   return (
     <Page>
       <div
-        class='flex justify-around items-start flex-grow flex-col py-8 pl-4 md:pl-12.5% h-full'
+        class='flex justify-around items-start flex-grow flex-col py-20 pl-4 md:pl-12.5% h-full'
         id='page2'
       >
         <div class='flex flex-col'>

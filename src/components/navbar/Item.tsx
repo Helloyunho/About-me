@@ -6,7 +6,7 @@ const NavBarItem: ParentComponent<{
   index: number
 }> = ({ children, href, isActive, index }) => {
   return (
-    <a class='bg-base flex' href={href}>
+    <a class='flex bg-base' href={href}>
       <p
         class={`${
           isActive() ? 'color-white' : 'color-neutral-500'
