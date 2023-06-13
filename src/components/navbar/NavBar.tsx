@@ -10,7 +10,7 @@ const NavBar: Component<{
     <nav class='w-full fixed top-0 letf-0 z-41'>
       <div class='px-10 py-5 md:hidden block'>
         <button
-          class='bg-base border-none p-0 cursor-pointer'
+          class='bg-base-light dark:bg-base-dark border-none p-0 cursor-pointer'
           onClick={() => {
             setIsDrawerOpen(!isDrawerOpen())
           }}

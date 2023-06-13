@@ -46,7 +46,7 @@ const Page1: Component = () => {
             >
               frontend
             </p>
-            <p class='md:text-size-6xl line-height-normal font-bold m-0 relative before:absolute before:top-87% before:left-0 before:h-1 before:bg-base before:mix-blend-difference before:w-full before:content-empty text-size-5xl hidden sm:inline-block'>
+            <p class='md:text-size-6xl line-height-normal font-bold m-0 relative before:absolute before:top-87% before:left-0 before:h-1 before:bg-base-light dark:bg-base-dark before:mix-blend-difference before:w-full before:content-empty text-size-5xl hidden sm:inline-block'>
               &nbsp;
             </p>
             <p

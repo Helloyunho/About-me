@@ -3,7 +3,12 @@ import presetUno from '@unocss/preset-uno'
 import presetIcons from '@unocss/preset-icons'
 
 export default defineConfig({
-  presets: [presetUno(), presetIcons()],
+  presets: [
+    presetUno({
+      dark: 'media'
+    }),
+    presetIcons()
+  ],
   rules: [
     [
       'bg-frontend',
@@ -25,7 +30,10 @@ export default defineConfig({
   ],
   theme: {
     colors: {
-      base: '#F5F2ED'
+      base: {
+        light: '#F5F2ED',
+        dark: '#0A0D12'
+      }
     }
   },
   preflights: [
@@ -45,6 +53,14 @@ export default defineConfig({
         };
         margin: 0;
         padding: 0;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: ${
+            (theme.colors['base-dark'] as string | undefined) ?? '#0A0D12'
+          };
+        }
       }
       `
     },

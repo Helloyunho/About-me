@@ -23,7 +23,7 @@ const Page4: Component = () => {
               ,&nbsp;
             </p>
             <a href='https://github.com/Helloyunho'>
-              <p class='text-size-4xl line-height-normal font-semibold m-0 color-#191717 underline underline-4 md:text-size-5xl'>
+              <p class='text-size-4xl line-height-normal font-semibold m-0 color-#191717 dark:color-white underline underline-4 md:text-size-5xl'>
                 GitHub
               </p>
             </a>

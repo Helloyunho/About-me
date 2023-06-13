@@ -62,7 +62,7 @@ const App: Component = () => {
         />
       )}
       <div
-        class={`fixed top-0 left-0 z-40 overflow-y-auto transition-transform transition-duration-500 ease-out w-48 h-screen pt-18 pb-12 px-10 bg-base ${
+        class={`fixed top-0 left-0 z-40 overflow-y-auto transition-transform transition-duration-500 ease-out w-48 h-screen pt-18 pb-12 px-10 bg-base-light dark:bg-base-dark ${
           isDrawerOpen() ? 'translate-none' : '-translate-x-full'
         }`}
       >
