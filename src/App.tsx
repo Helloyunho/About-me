@@ -20,9 +20,9 @@ const App: Component = () => {
 
   const handleScroll = (): void => {
     /* eslint-disable @typescript-eslint/no-non-null-assertion -- these elements are obviously exist */
-    const page2 = document.getElementById('page2')!
-    const page3 = document.getElementById('page3')!
-    const page4 = document.getElementById('page4')!
+    const page2 = document.getElementById('profile')!
+    const page3 = document.getElementById('projects')!
+    const page4 = document.getElementById('more')!
     /* eslint-enable @typescript-eslint/no-non-null-assertion */
 
     if (isInViewport(page4)) {
@@ -86,28 +86,28 @@ const App: Component = () => {
       >
         <div class='flex flex-col gap-2'>
           <NavBarItem
-            href='#page1'
+            href='#home'
             isActive={() => activeIndex() === 0}
             index={0}
           >
             Home
           </NavBarItem>
           <NavBarItem
-            href='#page2'
+            href='#profile'
             isActive={() => activeIndex() === 1}
             index={1}
           >
             Profile
           </NavBarItem>
           <NavBarItem
-            href='#page3'
+            href='#projects'
             isActive={() => activeIndex() === 2}
             index={2}
           >
             Projects
           </NavBarItem>
           <NavBarItem
-            href='#page4'
+            href='#more'
             isActive={() => activeIndex() === 3}
             index={3}
           >

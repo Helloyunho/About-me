@@ -47,32 +47,24 @@ const NavBar: Component<{
         </button>
       </div>
       <div class='px-10 py-5 justify-between md:flex hidden'>
-        <NavBarItem
-          href='#page1'
-          isActive={() => activeIndex() === 0}
-          index={0}
-        >
+        <NavBarItem href='#home' isActive={() => activeIndex() === 0} index={0}>
           Home
         </NavBarItem>
         <NavBarItem
-          href='#page2'
+          href='#profile'
           isActive={() => activeIndex() === 1}
           index={1}
         >
           Profile
         </NavBarItem>
         <NavBarItem
-          href='#page3'
+          href='#projects'
           isActive={() => activeIndex() === 2}
           index={2}
         >
           Projects
         </NavBarItem>
-        <NavBarItem
-          href='#page4'
-          isActive={() => activeIndex() === 3}
-          index={3}
-        >
+        <NavBarItem href='#more' isActive={() => activeIndex() === 3} index={3}>
           More
         </NavBarItem>
       </div>
