@@ -64,7 +64,7 @@ export default defineConfig({
       body {
         background-color: ${
           // @ts-expect-error it does have colors, but it's not typed
-          (theme.colors?.base as string | undefined) ?? '#F5F2ED'
+          (theme.colors?.base.light as string | undefined) ?? '#F5F2ED'
         };
         margin: 0;
         padding: 0;
@@ -74,7 +74,7 @@ export default defineConfig({
         body {
           background-color: ${
             // @ts-expect-error it does have colors, but it's not typed
-            (theme.colors['base-dark'] as string | undefined) ?? '#0A0D12'
+            (theme.colors.base.dark as string | undefined) ?? '#0A0D12'
           };
         }
       }
