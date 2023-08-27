@@ -1,7 +1,7 @@
 import type { Component } from 'solid-js'
 import Page from '../components/Page'
 
-const myBirthday = new Date(2005, 8, 10) // celebrate me!!
+const myBirthday = new Date(2005, 7, 10) // celebrate me!!
 
 const Page2: Component = () => {
   return (
