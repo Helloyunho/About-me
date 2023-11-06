@@ -41,8 +41,8 @@ const Page4: Component = () => {
               ,&nbsp;
             </p>
             <a href='https://twitter.com/helloyunho_'>
-              <p class='text-size-4xl tag-p font-semibold color-#4C9BF0 underline-good md:text-size-5xl'>
-                Twitter
+              <p class='text-size-4xl tag-p font-semibold color-invert underline-good md:text-size-5xl'>
+                X
               </p>
             </a>
             <p class='text-size-4xl tag-p font-semibold color-invert md:text-size-5xl'>
