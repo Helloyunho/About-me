@@ -6,9 +6,7 @@ import type { PinnedRepoPayload } from '../types/pinnedRepo'
 
 const Page3: Component = () => {
   const [pinnedProjects] = createResource<PinnedRepoPayload[]>(async () => {
-    const resp = await fetch(
-      'https://gh-pinned-repos.egoist.dev/?username=Helloyunho'
-    )
+    const resp = await fetch('/api/github-pins')
     return await resp.json()
   })
 

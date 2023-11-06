@@ -3,7 +3,4 @@ export interface PinnedRepoPayload {
   repo: string
   link: string
   description: string
-  image: string
-  stars: string
-  forks: string
 }

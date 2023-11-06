@@ -3,3 +3,5 @@ dist
 
 # macOS Stuffs
 .DS_Store
+.vercel
+/.yarn

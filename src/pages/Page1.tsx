@@ -50,7 +50,7 @@ const Page1: Component = () => {
               &nbsp;
             </p>
             <p
-              class='md:text-size-6xl tag-p font-bold underline-good color-invert text-size-5xl'
+              class='md:text-size-6xl tag-p font-bold gradient-underline-white before:mix-blend-difference color-invert text-size-5xl'
               style={{
                 'text-underline-offset': '0.2em'
               }}

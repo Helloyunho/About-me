@@ -25,6 +25,7 @@
     "vite-plugin-solid": "^2.5.0"
   },
   "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
     "solid-js": "^1.6.10"
   }
 }
