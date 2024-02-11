@@ -1,7 +1,11 @@
 import type { Component } from 'solid-js'
 import Page from '../components/Page'
+import type { Translator, Flatten } from '@solid-primitives/i18n'
+import type en from '../i18n/en'
 
-const Page4: Component = () => {
+const Page4: Component<{
+  t: Translator<Flatten<typeof en>>
+}> = ({ t }) => {
   return (
     <Page>
       <div
@@ -11,7 +15,7 @@ const Page4: Component = () => {
         <div class='flex flex-col'> {/* dummy element */}</div>
         <div class='flex flex-col gap-2'>
           <p class='text-size-5xl tag-p font-bold color-invert md:text-size-6xl'>
-            Contact
+            {t('page4.contact')}
           </p>
           <div class='flex'>
             <a href='mailto:me@helloyunho.xyz'>

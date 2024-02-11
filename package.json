@@ -2,6 +2,7 @@
   "name": "@helloyunho/about-me",
   "version": "0.0.1",
   "description": "Helloyunho's about me page",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,21 +11,23 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "@iconify-json/tabler": "^1.1.79",
-    "@typescript-eslint/eslint-plugin": "^5.50.0",
-    "@unocss/preset-icons": "^0.53.1",
-    "@unocss/preset-uno": "^0.52.7",
-    "@unocss/reset": "^0.53.0",
-    "@unocss/vite": "^0.49.4",
+    "@types/node": "^20.11.17",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@unocss/preset-icons": "^0.58.5",
+    "@unocss/preset-uno": "^0.58.5",
+    "@unocss/reset": "^0.58.5",
+    "@unocss/vite": "^0.58.5",
     "eslint": "^8.0.1",
-    "eslint-config-standard-with-typescript": "^35.0.0",
+    "eslint-config-standard-with-typescript": "^43.0.1",
     "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-promise": "^6.0.0",
     "typescript": "*",
-    "vite": "^4.5.2",
+    "vite": "^5.1.1",
     "vite-plugin-solid": "^2.5.0"
   },
   "dependencies": {
+    "@solid-primitives/i18n": "^2.0.1",
     "cheerio": "^1.0.0-rc.12",
     "solid-js": "^1.6.10"
   }

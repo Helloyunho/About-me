@@ -1,12 +1,30 @@
-import type { ParentComponent } from 'solid-js'
+/* eslint-disable multiline-ternary */
+import type { Component } from 'solid-js'
 
-const NavBarItem: ParentComponent<{
+const NavBarItem: Component<{
   href?: string
   isActive: () => boolean
-  index: number
-}> = ({ children, href, isActive, index }) => {
+  index?: number
+  onClick?: () => void
+  children: () => unknown
+}> = ({ children, href, isActive, index, onClick }) => {
   return (
-    <a class='flex bg-base-light dark:bg-base-dark' href={href}>
+    <a
+      class='flex bg-base-light dark:bg-base-dark cursor-pointer'
+      href={href}
+      onClick={onClick}
+    >
+      {index != null ? (
+        <p
+          class={`${
+            isActive() ? 'color-white' : 'color-neutral-500'
+          } text-size-3xl ${
+            isActive() ? 'font-semibold' : 'font-light'
+          } mix-blend-difference my-0`}
+        >
+          #{index}&nbsp;
+        </p>
+      ) : null}
       <p
         class={`${
           isActive() ? 'color-white' : 'color-neutral-500'
@@ -14,16 +32,7 @@ const NavBarItem: ParentComponent<{
           isActive() ? 'font-semibold' : 'font-light'
         } mix-blend-difference my-0`}
       >
-        #{index}&nbsp;
-      </p>
-      <p
-        class={`${
-          isActive() ? 'color-white' : 'color-neutral-500'
-        } text-size-3xl ${
-          isActive() ? 'font-semibold' : 'font-light'
-        } mix-blend-difference my-0`}
-      >
-        {children}
+        {children() as string}
       </p>
     </a>
   )

@@ -1,9 +1,14 @@
+/* eslint-disable multiline-ternary */
 import type { Component } from 'solid-js'
 import Page from '../components/Page'
+import type { Translator, Flatten } from '@solid-primitives/i18n'
+import type en from '../i18n/en'
 
 const myBirthday = new Date(2005, 7, 10) // celebrate me!!
 
-const Page2: Component = () => {
+const Page2: Component<{
+  t: Translator<Flatten<typeof en>>
+}> = ({ t }) => {
   return (
     <Page>
       <div
@@ -13,13 +18,14 @@ const Page2: Component = () => {
         <div class='flex flex-col'>
           <div>
             <p class='md:text-size-4xl tag-p font-medium color-invert text-size-3xl'>
-              I'm&nbsp;
+              {t('page2.im')}&nbsp;
             </p>
             <p class='md:text-size-4xl tag-p font-semibold color-invert text-size-3xl'>
-              Yunho
+              {t('page2.yunho')}
             </p>
             <p class='md:text-size-4xl tag-p font-medium color-invert text-size-3xl'>
-              , a&nbsp;
+              {t('page2.yunhoPostfix')}&nbsp;
+              {t('page2.a') != null ? <>{t('page2.a')}&nbsp;</> : null}
             </p>
             <a href='#projects' class='inline-block text-size-3xl'>
               <p
@@ -28,69 +34,71 @@ const Page2: Component = () => {
                   'text-underline-offset': '0.2em'
                 }}
               >
-                Frontend developer
+                {t('page2.frontend')}
               </p>
             </a>
             <p class='md:text-size-4xl tag-p font-medium text-size-3xl'>
               &nbsp;👩🏼‍💻
             </p>
             <p class='md:text-size-4xl tag-p font-medium color-invert text-size-3xl'>
-              .
+              {t('page2.frontendPostfix')}
             </p>
           </div>
           <div>
             <p class='md:text-size-4xl tag-p font-medium color-invert text-size-3xl'>
-              I'm also known as&nbsp;
+              {t('page2.alsoKnownAs')}&nbsp;
             </p>
             <p class='md:text-size-4xl tag-p font-semibold color-invert text-size-3xl'>
               Helloyunho
             </p>
             <p class='md:text-size-4xl tag-p font-medium color-invert text-size-3xl'>
-              .
+              {t('page2.alsoKnownAsPostfix')}
             </p>
           </div>
           <div>
             <p class='md:text-size-4xl tag-p font-medium color-invert text-size-3xl'>
-              I'm&nbsp;
+              {t('page2.im')}&nbsp;
             </p>
             <p class='md:text-size-4xl tag-p font-semibold color-invert text-size-3xl'>
               {new Date(Date.now() - myBirthday.getTime()).getFullYear() - 1970}
               &nbsp;
             </p>
             <p class='md:text-size-4xl tag-p font-medium color-invert text-size-3xl'>
-              years old,&nbsp;
+              {t('page2.yearsOld')}&nbsp;
             </p>
+            {t('page2.and') != null ? (
+              <p class='md:text-size-4xl tag-p font-medium color-invert text-size-3xl'>
+                {t('page2.and')}&nbsp;
+              </p>
+            ) : null}
             <p class='md:text-size-4xl tag-p font-medium color-invert text-size-3xl'>
-              and&nbsp;
-            </p>
-            <p class='md:text-size-4xl tag-p font-medium color-invert text-size-3xl'>
-              I'm from&nbsp;
+              {t('page2.from')}&nbsp;
             </p>
             <p class='md:text-size-4xl tag-p font-semibold color-invert text-size-3xl'>
-              Korea&nbsp;
+              {t('page2.korea')}&nbsp;
             </p>
             <p class='md:text-size-4xl tag-p font-medium text-size-3xl'>🇰🇷</p>
             <p class='md:text-size-4xl tag-p font-medium color-invert text-size-3xl'>
-              .
+              {t('page2.fromKoreaPostfix')}
             </p>
           </div>
           <div>
             <p class='md:text-size-4xl tag-p font-medium color-invert text-size-3xl'>
-              My preferred pronouns is&nbsp;
+              {t('page2.pronouns')}&nbsp;
             </p>
             <p class='md:text-size-4xl tag-p font-semibold color-invert text-size-3xl'>
-              She/Her
+              {t('page2.sheHer')}
             </p>
             <p class='md:text-size-4xl tag-p font-medium text-size-3xl'>
               &nbsp;🙋‍♀️
             </p>
             <p class='md:text-size-4xl tag-p font-medium color-invert text-size-3xl'>
-              .
+              {t('page2.sheHerPostfix')}
             </p>
           </div>
           <div>
             <p class='md:text-size-4xl tag-p font-medium color-invert text-size-3xl'>
-              Feel free to&nbsp;
+              {t('page2.feelFreeTo')}&nbsp;
             </p>
             <a href='#more'>
               <p
@@ -99,7 +107,7 @@ const Page2: Component = () => {
                   'text-underline-offset': '0.2em'
                 }}
               >
-                contact me
+                {t('page2.contactMe')}
               </p>
             </a>
             <p class='md:text-size-4xl tag-p font-medium text-size-3xl'>
@@ -112,7 +120,7 @@ const Page2: Component = () => {
         </div>
         <div class='flex flex-col gap-2'>
           <p class='md:text-size-5xl tag-p font-bold color-invert text-size-10'>
-            Languages I Use
+            {t('page2.languagesIUse')}
           </p>
           <div class='flex'>
             <a href='https://www.typescriptlang.org/'>

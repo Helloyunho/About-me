@@ -4,11 +4,9 @@ import presetIcons from '@unocss/preset-icons'
 
 export default defineConfig({
   presets: [
-    // @ts-expect-error idk man it should work
     presetUno({
       dark: 'media'
     }),
-    // @ts-expect-error this one as well
     presetIcons()
   ],
   shortcuts: [
@@ -94,5 +92,6 @@ export default defineConfig({
       }
       `
     }
-  ]
+  ],
+  safelist: ['transition-opacity']
 })

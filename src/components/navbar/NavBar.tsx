@@ -1,11 +1,15 @@
 import type { Component, Accessor } from 'solid-js'
 import NavBarItem from './Item'
+import type { Flatten, Translator } from '@solid-primitives/i18n'
+import type en from '../../i18n/en'
 
 const NavBar: Component<{
   activeIndex: Accessor<0 | 1 | 2 | 3>
   isDrawerOpen: Accessor<boolean>
   setIsDrawerOpen: (value: boolean) => void
-}> = ({ activeIndex, isDrawerOpen, setIsDrawerOpen }) => {
+  onLanguageToggle: () => void
+  t: Translator<Flatten<typeof en>>
+}> = ({ activeIndex, isDrawerOpen, setIsDrawerOpen, onLanguageToggle, t }) => {
   return (
     <nav class='w-full fixed top-0 letf-0 z-41'>
       <div class='px-10 py-5 md:hidden block'>
@@ -48,24 +52,27 @@ const NavBar: Component<{
       </div>
       <div class='px-10 py-5 justify-between md:flex hidden'>
         <NavBarItem href='#home' isActive={() => activeIndex() === 0} index={0}>
-          Home
+          {() => t('home')}
         </NavBarItem>
         <NavBarItem
           href='#profile'
           isActive={() => activeIndex() === 1}
           index={1}
         >
-          Profile
+          {() => t('profile')}
         </NavBarItem>
         <NavBarItem
           href='#projects'
           isActive={() => activeIndex() === 2}
           index={2}
         >
-          Projects
+          {() => t('projects')}
         </NavBarItem>
         <NavBarItem href='#more' isActive={() => activeIndex() === 3} index={3}>
-          More
+          {() => t('more')}
+        </NavBarItem>
+        <NavBarItem isActive={() => true} onClick={onLanguageToggle}>
+          {() => t('changeLang')}
         </NavBarItem>
       </div>
     </nav>

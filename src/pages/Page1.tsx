@@ -1,7 +1,12 @@
+/* eslint-disable multiline-ternary */
 import type { Component } from 'solid-js'
 import Page from '../components/Page'
+import type { Flatten, Translator } from '@solid-primitives/i18n'
+import type en from '../i18n/en'
 
-const Page1: Component = () => {
+const Page1: Component<{
+  t: Translator<Flatten<typeof en>>
+}> = ({ t }) => {
   return (
     <Page>
       <div
@@ -10,11 +15,11 @@ const Page1: Component = () => {
       >
         <div>
           <p class='md:text-size-6xl tag-p font-medium color-invert text-size-5xl'>
-            Hey!&nbsp;
+            {t('page1.hey')}&nbsp;
           </p>
           <div class='inline-block'>
             <p class='md:text-size-6xl tag-p font-medium color-invert text-size-5xl'>
-              I'm&nbsp;
+              {t('page1.im')}&nbsp;
             </p>
             <a href='#profile'>
               <p
@@ -23,18 +28,20 @@ const Page1: Component = () => {
                   'text-underline-offset': '0.2em'
                 }}
               >
-                Yunho
+                {t('page1.yunho')}
               </p>
             </a>
             <p class='md:text-size-6xl tag-p font-medium color-invert text-size-5xl'>
-              .{' '}
+              {t('page1.yunhoPostfix')}
             </p>
           </div>
         </div>
         <div>
-          <p class='md:text-size-6xl tag-p font-medium color-invert text-size-5xl'>
-            A&nbsp;
-          </p>
+          {t('page1.a') != null ? (
+            <p class='md:text-size-6xl tag-p font-medium color-invert text-size-5xl'>
+              {t('page1.a')}&nbsp;
+            </p>
+          ) : null}
           <a href='#projects'>
             <p
               class='md:text-size-6xl tag-p font-bold gradient-underline-frontend text-size-5xl'
@@ -44,9 +51,9 @@ const Page1: Component = () => {
                 '-webkit-text-fill-color': 'transparent'
               }}
             >
-              frontend
+              {t('page1.frontend')}
             </p>
-            <p class='md:text-size-6xl tag-p font-bold gradient-underline-white before:mix-blend-difference text-size-5xl hidden sm:inline-block'>
+            <p class='md:text-size-6xl tag-p font-bold gradient-underline-white before:mix-blend-difference text-size-5xl inline-block'>
               &nbsp;
             </p>
             <p
@@ -55,11 +62,11 @@ const Page1: Component = () => {
                 'text-underline-offset': '0.2em'
               }}
             >
-              developer
+              {t('page1.developer')}
             </p>
           </a>
           <p class='md:text-size-6xl tag-p font-medium color-invert text-size-5xl'>
-            .{' '}
+            {t('page1.developerPostfix')}
           </p>
         </div>
       </div>

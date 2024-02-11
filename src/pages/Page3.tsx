@@ -3,8 +3,12 @@ import type { Component } from 'solid-js'
 import { createResource } from 'solid-js'
 import Page from '../components/Page'
 import type { PinnedRepoPayload } from '../types/pinnedRepo'
+import type { Translator, Flatten } from '@solid-primitives/i18n'
+import type en from '../i18n/en'
 
-const Page3: Component = () => {
+const Page3: Component<{
+  t: Translator<Flatten<typeof en>>
+}> = ({ t }) => {
   const [pinnedProjects] = createResource<PinnedRepoPayload[]>(async () => {
     const resp = await fetch('/api/github-pins')
     return await resp.json()
@@ -20,7 +24,7 @@ const Page3: Component = () => {
           <div class='flex justify-between items-center w-full'>
             <div class='flex flex-col'>
               <p class='text-size-4xl tag-p font-bold color-invert'>
-                Wait a bit...
+                {t('page3.wait')}
               </p>
             </div>
           </div>
@@ -28,7 +32,7 @@ const Page3: Component = () => {
           <div class='flex justify-between items-center w-full'>
             <div class='flex flex-col'>
               <p class='text-size-4xl tag-p font-bold color-invert'>
-                Oops, an error occured while fetching my pinned projects
+                {t('page3.error')}
               </p>
               <p class='text-size-4xl tag-p font-bold'>&nbsp;😅</p>
             </div>
