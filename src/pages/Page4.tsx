@@ -19,7 +19,7 @@ const Page4: Component<{
           </p>
           <div class='flex'>
             <a href='mailto:me@helloyunho.xyz'>
-              <p class='text-size-4xl tag-p font-semibold color-invert underline-good md:text-size-5xl'>
+              <p class='text-size-4xl tag-p font-semibold color-red-600 underline-good md:text-size-5xl'>
                 Email
               </p>
             </a>
@@ -27,7 +27,7 @@ const Page4: Component<{
               ,&nbsp;
             </p>
             <a href='https://github.com/Helloyunho'>
-              <p class='text-size-4xl tag-p font-semibold color-#191717 dark:color-white underline-good md:text-size-5xl'>
+              <p class='text-size-4xl tag-p font-semibold color-violet-600 underline-good md:text-size-5xl'>
                 GitHub
               </p>
             </a>
