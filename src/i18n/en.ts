@@ -28,7 +28,7 @@ export default {
     from: "I'm from",
     korea: 'Korea',
     fromKoreaPostfix: '.',
-    pronouns: 'My preferred pronouns is',
+    pronouns: 'My preferred pronouns are',
     sheHer: 'She/Her',
     sheHerPostfix: '.',
     feelFreeTo: 'Feel free to',
