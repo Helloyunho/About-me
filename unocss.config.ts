@@ -17,7 +17,7 @@ export default defineConfig({
     },
     [
       /^gradient-underline-([a-z]*)$/,
-      ([, c]: [any, string]) =>
+      ([, c]) =>
         `relative bg-clip-text before:absolute before:top-87% before:left-0 before:h-1 before:bg-${c} before:w-full before:content-empty`
     ]
   ],
