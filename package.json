@@ -30,6 +30,5 @@
     "@solid-primitives/i18n": "^2.0.1",
     "cheerio": "^1.0.0-rc.12",
     "solid-js": "^1.6.10"
-  },
-  "packageManager": "yarn@1.22.1"
+  }
 }
