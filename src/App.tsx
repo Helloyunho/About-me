@@ -22,12 +22,10 @@ enum LANGUAGES {
   KO = 'ko'
 }
 
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 const isInViewport = (el: Element): boolean => {
   const rect = el.getBoundingClientRect()
   return rect.y <= window.innerHeight / 2 && rect.x <= window.innerWidth / 2
 }
-/* eslint-enable @typescript-eslint/strict-boolean-expressions */
 
 const fetchTranslations = async (
   locale: string
@@ -47,11 +45,9 @@ const App: Component = () => {
   const [duringTransition, startTransition] = useTransition()
 
   const handleScroll = (): void => {
-    /* eslint-disable @typescript-eslint/no-non-null-assertion -- these elements are obviously exist */
     const page2 = document.getElementById('profile')!
     const page3 = document.getElementById('projects')!
     const page4 = document.getElementById('more')!
-    /* eslint-enable @typescript-eslint/no-non-null-assertion */
 
     if (isInViewport(page4)) {
       setActiveIndex(3)
@@ -70,24 +66,6 @@ const App: Component = () => {
   }
 
   onMount(() => {
-    if (window.matchMedia('(prefers-color-scheme: dark)')?.matches) {
-      document
-        .querySelector('meta[name="theme-color"]')
-        ?.setAttribute('content', '#0A0D12')
-    }
-    window
-      .matchMedia('(prefers-color-scheme: dark)')
-      .addEventListener('change', (event) => {
-        if (event.matches) {
-          document
-            .querySelector('meta[name="theme-color"]')
-            ?.setAttribute('content', '#0A0D12')
-        } else {
-          document
-            .querySelector('meta[name="theme-color"]')
-            ?.setAttribute('content', '#F5F2ED')
-        }
-      })
     window.addEventListener('scroll', handleScroll)
     const setLanguageFromBrowser = (): void => {
       for (let lang of navigator.languages) {
